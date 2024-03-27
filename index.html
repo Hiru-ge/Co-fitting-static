@@ -24,20 +24,38 @@
 
     <!-- コンテンツはFlexBoxでレイアウト指定する -->
     <div class="container">
-      <form>
+      <form action="#">
         <!--変換前レシピの投数入力欄-->
         <div class="item">
           <label for="pour-times-input">変換前レシピの投数:</label>
-          <input type="text" id="pour-times-input">
+          <input type="text" id="pour-times-input"> 投
         </div>
 
         <!--変換前レシピの入力欄(pour-times-inputの投数分だけフォームを生成)-->
         <div class="item">
           <h3>変換前レシピ入力欄</h3>
           <div class="recipe-input"> <!--変換前レシピの入力欄を生成するためのdiv-->
+            <label for="bean-input">豆量(g)</label><input type="text" id="bean-input"> g
+            <label for="water-input">湯量(ml)</label><input type="text" id="water-input"> ml
+            <div class="process-input">
+              <p>投数  経過時間  総注湯量</p>              
 
+              <!--以下は入力欄の完成例(これができあがるようにJavaScriptを組む)-->
+              <div class="1st">
+                <label>1投目</label>
+                <input type="text" class="minutes">:<input type="text" class="seconds">
+                <input type="text" class="pour-ml"> ml
+              </div>
+              <div class="2st">
+                <label>2投目</label>
+                <input type="text" class="minutes">:<input type="text" class="seconds">
+                <input type="text" class="pour-ml"> ml
+              </div>
+
+            </div>
           </div>
-        </div>
+        </div> <!--/変換前レシピの入力欄-->
+
         <!--変換後の豆と湯の比率入力欄-->
         <div class="item">
           <label for="ratio-input">変換後の豆と湯の比率: 1:</label>
@@ -54,9 +72,22 @@
       <!--変換後レシピの出力欄-->
       <div class="item">
         <h3>変換後レシピ</h3>
-        <div class="recipe-output">
+        <p>豆量(g):<span class="bean-output"></span></p>
+        <p>湯量(ml):<span class="water-output"></span></p>
+        <table class="recipe-output">
+          <tr>
+            <th>経過時間</th>
+            <th>注湯量</th>
+            <th>総注湯量</th>
+          </tr>
+          <!--以下は出力欄の完成例(これができあがるようにJavaScriptを組む)-->
+          <tr>
+            <td><span class="minutes"></span>:<span class="seconds"></span></td>
+            <td><span class="pour-ml"></span> ml</td>
+            <td><span class="total-ml"></span> ml</td>
+          </tr>
 
-        </div>
+        </table>
       </div>
 
       <!--ストップウォッチ-->
