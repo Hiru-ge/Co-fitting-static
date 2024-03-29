@@ -22,22 +22,21 @@
     <h2 class="sub-title">既存レシピの最終量を調整します</h2>
     <a href="how-to-use.html" target="_blank">変換器の使い方(別タブで開きます)</a>
 
-    <!-- コンテンツはFlexBoxでレイアウト指定する -->
-    <div class="container">
-      <form action="#" class="item">
-        <!--変換前レシピの投数入力欄-->
-        <div>
-          <label for="pour-times-input">変換前レシピの投数:</label>
-          <input type="text" id="pour-times-input"> 投
-        </div>
-      </form>
-      <form action="#">
+    <form action="#">
+      <!--変換前レシピの投数入力欄-->
+      <div>
+        <label for="pour-times-input">変換前レシピの投数:</label>
+        <input type="text" id="pour-times-input"> 投
+      </div>
+    </form>
+      
+    <form action="#">        
+      <!-- コンテンツはFlexBoxでレイアウト指定する -->
+      <div class="container">
         <!--変換前レシピの入力欄(pour-times-inputの投数分だけフォームを生成)-->
         <div class="item">
           <h3>変換前レシピ入力欄</h3>
           <div class="recipe-input"> <!--変換前レシピの入力欄を生成するためのdiv-->
-            <label for="bean-input">豆量(g)</label><input type="text" id="bean-input"> g
-            <label for="water-input">湯量(ml)</label><input type="text" id="water-input"> ml
             <div class="process-input">
               <p>投数  経過時間  総注湯量</p>              
 
@@ -57,51 +56,59 @@
           </div>
         </div> <!--/変換前レシピの入力欄-->
 
-        <!--変換後の豆と湯の比率入力欄-->
+        <!--オプション欄-->
         <div class="item">
-          <label for="ratio-input">変換後の豆と湯の比率: 1:</label>
-          <input type="text" id="ratio-input">
-        </div>
-
-        <!--蒸らし固定ON/OFF-->
-        <div class="item">
-          <input type="checkbox" id="steep-check">
-          <label for="steep-check">蒸らし湯量固定</label> <!--フォームのパーツと項目の名前を関連付けるためのlabel-->
-        </div>
-      </form>
-      
-      <!--変換後レシピの出力欄-->
-      <div class="item">
-        <h3>変換後レシピ</h3>
-        <p>豆量(g):<span class="bean-output"></span></p>
-        <p>湯量(ml):<span class="water-output"></span></p>
-        <table class="recipe-output">
-          <tr>
-            <th>経過時間</th>
-            <th>注湯量</th>
-            <th>総注湯量</th>
-          </tr>
-          <!--以下は出力欄の完成例(これができあがるようにJavaScriptを組む)-->
-          <tr>
-            <td><span class="minutes"></span>:<span class="seconds"></span></td>
-            <td><span class="pour-ml"></span> ml</td>
-            <td><span class="total-ml"></span> ml</td>
-          </tr>
-        </table>
-      </div>
-
-      <!--ストップウォッチ-->
-        <div class="item">
-          <p class="accordion-head">ストップウォッチ</p>
-          <div id="time">00:00</div> <!--ここに時間表示-->
-          <div id="timer-buttons">
-            <button class="timer-button" id="start"><img src="startボタンの画像"></button>
-            <button class="timer-button" id="stop"><img src="stopボタンの画像"></button>
-            <button class="timer-button" id="reset"><img src="resetボタンの画像"></button>
+          <div>
+            <label for="bean-input">豆量(g)</label><input type="text" id="bean-input"> g
           </div>
-        </div>
+          <div>
+            <label for="water-input">湯量(ml)</label><input type="text" id="water-input"> ml         
+          </div>
+          <div>
+            <!--変換後の豆と湯の比率入力欄-->
+            <label for="ratio-input">変換後の豆と湯の比率: 1:</label>
+            <input type="text" id="ratio-input">
+          </div>
+          <div>
+            <!--蒸らし固定ON/OFF-->
+            <input type="checkbox" id="steep-check">
+            <label for="steep-check">蒸らし湯量固定</label> <!--フォームのパーツと項目の名前を関連付けるためのlabel-->
+          </div>
+        </div> <!--/オプション欄-->
         
-      </div> <!--/container-->
+      </form>
+    </div> <!--/container-->
+      
+    <!--変換後レシピの出力欄-->
+    <div class="item">
+      <h3>変換後レシピ</h3>
+      <p>豆量(g):<span class="bean-output"></span></p>
+      <p>湯量(ml):<span class="water-output"></span></p>
+      <table class="recipe-output">
+        <tr>
+          <th>経過時間</th>
+          <th>注湯量</th>
+          <th>総注湯量</th>
+        </tr>
+        <!--以下は出力欄の完成例(これができあがるようにJavaScriptを組む)-->
+        <tr>
+          <td><span class="minutes"></span>:<span class="seconds"></span></td>
+          <td><span class="pour-ml"></span> ml</td>
+          <td><span class="total-ml"></span> ml</td>
+        </tr>
+      </table>
+    </div>
+
+    <!--ストップウォッチ-->
+    <div class="item">
+      <p class="accordion-head">ストップウォッチ</p>
+      <div id="time">00:00</div> <!--ここに時間表示-->
+      <div id="timer-buttons">
+        <button class="timer-button" id="start"><img src="startボタンの画像"></button>
+        <button class="timer-button" id="stop"><img src="stopボタンの画像"></button>
+        <button class="timer-button" id="reset"><img src="resetボタンの画像"></button>
+      </div>
+    </div>
 
     <p>※豆量変化による流速の変化は加味されていません</p>
     <footer>
