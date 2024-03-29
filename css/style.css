@@ -3,6 +3,9 @@
 .container {
     display: flex;
 }
+.timer-items{
+    display: flex;
+}
 
 
 /*装飾･見栄えに関する部分*/
