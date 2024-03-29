@@ -19,23 +19,22 @@
       </div>
     </header>
     
-    <h2 class="sub-title">バランスキープ、量変換。既存レシピの調整に</h2>
-    <a href="how-to-use.html" target="_blank">変換器の使い方(別タブで開きます)</a>
-
-    <form action="#">
-      <!--変換前レシピの投数入力欄-->
-      <div>
-        <label for="pour-times-input">変換前レシピの投数:</label>
-        <input type="text" id="pour-times-input"> 投
-      </div>
-    </form>
-      
-    <h3>変換前レシピ入力欄</h3>
-    <form action="#">        
-      <!-- コンテンツはFlexBoxでレイアウト指定する -->
-      <div class="container">
-        <!--変換前レシピの入力欄(pour-times-inputの投数分だけフォームを生成)-->
-        <div class="item">
+    <div class="introduce">    
+      <h2 class="sub-title">バランスキープ、量変換。既存レシピの調整に</h2>
+      <a href="how-to-use.html" target="_blank">変換器の使い方(別タブで開きます)</a>
+    </div>
+            
+    <!-- コンテンツはFlexBoxでレイアウト指定する -->
+    <div class="container">
+      <div class="item">              
+        <h3>変換前レシピ入力欄</h3>  
+        <form action="#">  
+          <!--変換前レシピの投数入力欄-->
+          <div>
+            <label for="pour-times-input">変換前レシピの投数:</label>
+            <input type="text" id="pour-times-input"> 投
+          </div>
+          <!--変換前レシピの入力欄(pour-times-inputの投数分だけフォームを生成)-->
           <div class="recipe-input"> <!--変換前レシピの入力欄を生成するためのdiv-->
             <div class="process-input">
               <p>投数  経過時間  総注湯量</p>              
@@ -56,8 +55,9 @@
           </div>
         </div> <!--/変換前レシピの入力欄-->
 
-        <!--オプション欄-->
+        <!--変換目標入力欄-->
         <div class="item">
+          <h3>変換目標入力欄</h3>
           <div>
             <label for="bean-input">豆量(g)</label><input type="text" id="bean-input"> g
           </div>
@@ -74,7 +74,7 @@
             <input type="checkbox" id="steep-check">
             <label for="steep-check">蒸らし湯量固定</label> <!--フォームのパーツと項目の名前を関連付けるためのlabel-->
           </div>
-        </div> <!--/オプション欄-->
+        </div> <!--/変換目標入力欄-->
         
       </form>
     </div> <!--/container-->
