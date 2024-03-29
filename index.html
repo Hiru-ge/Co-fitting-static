@@ -26,7 +26,7 @@
             
     <!-- コンテンツはFlexBoxでレイアウト指定する -->
     <div class="container">
-      <div class="item">              
+      <div class="item origin-recipe-div">
         <h3>変換前レシピ入力欄</h3>  
         <form action="#">  
           <!--変換前レシピの投数入力欄-->
@@ -62,7 +62,7 @@
       </div> <!--/変換前レシピの入力欄-->
 
       <!--変換目標入力欄-->
-      <div class="item">
+      <div class="item target-recipe-div">
         <form action="#">
           <h3>変換目標入力欄</h3>
           <!--ここに求めるJavaScript側機能は2つ-->
@@ -88,7 +88,7 @@
       </div> <!--/item:変換目標入力欄-->
     
       <!--変換後レシピの出力欄-->
-      <div class="item">
+      <div class="item output-recipe-div">
         <h3>変換後レシピ</h3>
         <p>変換後の豆量(g):<span class="bean-output"></span></p>
         <p>変換後の総湯量(ml):<span class="water-output ml"></span></p>
@@ -108,7 +108,7 @@
       </div> <!-- /item:変換後レシピの出力欄 -->
 
       <!--ストップウォッチ-->
-      <div class="item">
+      <div class="item timer-div">
         <h3 class="accordion-head">ストップウォッチ</h3>
         <div class="timer-items">
           <p id="time" class="timer-item">00:00</p> <!--ここに時間表示-->
