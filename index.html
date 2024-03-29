@@ -24,13 +24,14 @@
 
     <!-- コンテンツはFlexBoxでレイアウト指定する -->
     <div class="container">
-      <form action="#">
+      <form action="#" class="item">
         <!--変換前レシピの投数入力欄-->
-        <div class="item">
+        <div>
           <label for="pour-times-input">変換前レシピの投数:</label>
           <input type="text" id="pour-times-input"> 投
         </div>
-
+      </form>
+      <form action="#">
         <!--変換前レシピの入力欄(pour-times-inputの投数分だけフォームを生成)-->
         <div class="item">
           <h3>変換前レシピ入力欄</h3>
@@ -86,7 +87,6 @@
             <td><span class="pour-ml"></span> ml</td>
             <td><span class="total-ml"></span> ml</td>
           </tr>
-
         </table>
       </div>
 
