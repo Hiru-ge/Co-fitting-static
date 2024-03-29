@@ -1,0 +1,5 @@
+/*機能に関する部分*/
+/*Flexbox*/
+.container {
+    display: flex;
+}
