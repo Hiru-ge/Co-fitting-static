@@ -20,6 +20,11 @@ header, footer {
     text-align: center;
     padding: 0.5rem 0;
 }
+footer {
+    position: fixed;    /*下部に固定*/
+    bottom: 0;
+    width: 100%;
+}
 h1 {
     padding: 0.5rem;
     font-size: 2rem;
@@ -32,6 +37,9 @@ div.introduce {
     padding: 0.75rem;
     font-size: 1.125rem;
     text-align: center;
+}
+.item {
+    padding: 0.5rem;
 }
 
 
