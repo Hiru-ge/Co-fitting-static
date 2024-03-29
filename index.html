@@ -48,12 +48,12 @@
               <div class="1st">
                 <label>1投目</label>
                 <input type="text" class="minutes">:<input type="text" class="seconds">
-                <input type="text" class="pour-ml"> ml
+                <input type="text" class="pour-ml ml"> ml
               </div>
               <div class="2st">
                 <label>2投目</label>
                 <input type="text" class="minutes">:<input type="text" class="seconds">
-                <input type="text" class="pour-ml"> ml
+                <input type="text" class="pour-ml ml"> ml
               </div>
 
             </div>
@@ -72,7 +72,7 @@
             <label for="bean-target">変換後の豆量(g): </label><input type="text" id="bean-target"> g
           </div>
           <div>
-            <label for="water-target">変換後の総湯量(ml): </label><input type="text" id="water-target"> ml         
+            <label for="water-target">変換後の総湯量(ml): </label><input type="text" id="water-target" class="ml"> ml         
           </div>
           <div>
             <!--変換後の豆と湯の比率入力欄-->
@@ -91,7 +91,7 @@
       <div class="item">
         <h3>変換後レシピ</h3>
         <p>変換後の豆量(g):<span class="bean-output"></span></p>
-        <p>変換後の総湯量(ml):<span class="water-output"></span></p>
+        <p>変換後の総湯量(ml):<span class="water-output ml"></span></p>
         <table class="recipe-output">
           <tr>
             <th>経過時間</th>
@@ -101,8 +101,8 @@
           <!--以下は出力欄の完成例(これができあがるようにJavaScriptを組む)-->
           <tr>
             <td><span class="minutes"></span>:<span class="seconds"></span></td>
-            <td><span class="pour-ml"></span> ml</td>
-            <td><span class="total-ml"></span> ml</td>
+            <td><span class="pour-ml ml"></span> ml</td>
+            <td><span class="total-ml ml"></span> ml</td>
           </tr>
         </table>
       </div> <!-- /item:変換後レシピの出力欄 -->

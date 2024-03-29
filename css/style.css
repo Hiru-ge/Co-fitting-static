@@ -2,6 +2,8 @@
 /*Flexbox*/
 .container {
     display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 4rem 4rem;
 }
 .timer-items{
     display: flex;
@@ -23,11 +25,8 @@ h1 {
     font-size: 2rem;
     text-align: center;
 }
-h3 {
+h3, h4 {
     padding: 0.5rem;
-}
-div {
-    padding: 0 0 0.5rem 0.5rem;
 }
 div.introduce {
     padding: 0.75rem;
@@ -52,10 +51,10 @@ textarea {
     border-radius: 5px;
 }
 input[type="text"] {
-    width: 3%;
-    max-width: 200px;
+    width: 8%;
+    max-width: 100px;
 }
-input[type="text"].pour-ml{
-    width: 5%;
-    max-width: 200px;
+input[type="text"].ml{
+    width: 12%;
+    max-width: 100px;
 }
