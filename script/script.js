@@ -3,11 +3,29 @@
 // 変換前レシピ入力欄の出力
 // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
     // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
-    $(document).ready(function() {
-        $('#pour-times-input').on('change', function(){
-            console.log('投数が変更されました');
-        });
+$(document).ready(function() {
+    $('#pour-times-input').on('change', function(){
+        let pourTimes = $('#pour-times-input').val();
+        let currentPourTimes = $('.process-input').children().length;
+
+        if (pourTimes > currentPourTimes) {
+            for (let i = currentPourTimes; i < pourTimes; i++) {                
+                let processInput = `
+                    <div class="${i + 1}st">
+                        <label>${i + 1}投目</label>
+                        <input type="text" class="minutes">:<input type="text" class="seconds">
+                        <input type="text" class="pour-ml ml"> ml
+                    </div>
+                `;
+                $('.process-input').append(processInput);
+            }
+        } else if (pourTimes < currentPourTimes) {
+            for (let i = currentPourTimes; i > pourTimes && i > 1; i--) { // i>1 : 1投目は消さない
+                $(`.${i}st`).remove();
+            }
+        }
     });
+});
 
 
 
