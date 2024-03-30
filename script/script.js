@@ -91,7 +91,7 @@ $(document).ready(function() {
         for (let i = 1; i <= pourTimes; i++) {
             let minutes = $(`.pour-step${i}`).children('.minutes').val();
             let seconds = $(`.pour-step${i}`).children('.seconds').val();
-            let unconvert_pour_ml = $(`.${i}`).children('.pour-ml').val();
+            let unconvert_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
             let totalWater_ml_buf = totalWater_ml; // ひとつ前の総湯量を記録しておくバッファ
             totalWater_ml = (unconvert_pour_ml * convert_rate).toFixed(1);
             let convert_pour_ml = parseFloat(totalWater_ml - totalWater_ml_buf).toFixed(1);
