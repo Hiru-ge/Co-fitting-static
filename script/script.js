@@ -28,6 +28,7 @@ $(document).ready(function() {
     // 変換目標入力欄の入力補助
         // 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される
         // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
+    // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
     function targetInput_Supporter(waterTarget, beanTarget, ratio) {
         if (beanTarget && waterTarget) {
             $('#ratio-target').val((waterTarget / beanTarget).toFixed(1));
