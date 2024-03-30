@@ -29,21 +29,21 @@ $(document).ready(function() {
         // 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される
         // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
     // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
-    function targetInput_Supporter(waterTarget, beanTarget, ratio) {
+    function targetInput_Supporter(waterTarget, beanTarget, ratioTarget) {
         if (beanTarget && waterTarget) {
             $('#ratio-target').val((waterTarget / beanTarget).toFixed(1));
-        } else if (beanTarget && ratio) {
-            $('#water-target').val((beanTarget * ratio).toFixed(1));
-        } else if (waterTarget && ratio) {
-            $('#bean-target').val((waterTarget / ratio).toFixed(1));
+        } else if (beanTarget && ratioTarget) {
+            $('#water-target').val((beanTarget * ratioTarget).toFixed(1));
+        } else if (waterTarget && ratioTarget) {
+            $('#bean-target').val((waterTarget / ratioTarget).toFixed(1));
         }
     }
 
     $('.input_support').on('change', function(){
         let beanTarget = $('#bean-target').val();
         let waterTarget = $('#water-target').val();
-        let ratio = $('#ratio-target').val();
-        targetInput_Supporter(waterTarget, beanTarget, ratio);
+        let ratioTarget = $('#ratio-target').val();
+        targetInput_Supporter(waterTarget, beanTarget, ratioTarget);
     });
 
 
