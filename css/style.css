@@ -3,7 +3,9 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0 4rem 4rem;
+    justify-content: center;
+    margin: 4rem;
+    background-color: gray;
 }
 .timer-items{
     display: flex;
@@ -55,8 +57,9 @@ div.introduce {
     background-color: #bdc6b7;
 }
 .item {
-    padding: 0 0 2rem 2rem;
-    width: 50%;
+    margin: 1rem;
+    padding: 1rem;
+    width: 45%;
 }
 
 
