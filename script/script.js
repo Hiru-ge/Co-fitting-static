@@ -1,7 +1,13 @@
 'use strict';
 
 // 変換前レシピ入力欄の出力
-
+// 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
+    // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
+    $(document).ready(function() {
+        $('#pour-times-input').on('change', function(){
+            console.log('投数が変更されました');
+        });
+    });
 
 
 
