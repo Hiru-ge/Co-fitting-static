@@ -96,7 +96,7 @@ $(document).ready(function() {
             totalWater_ml = (unconvert_pour_ml * convert_rate).toFixed(1);
             let convert_pour_ml = parseFloat(totalWater_ml - totalWater_ml_buf).toFixed(1);
             processOutput += `
-                <tr class="output-recipe-${i}st">
+                <tr class="output-recipe-step${i}">
                     <td>${minutes}:${seconds}</td>
                     <td>${convert_pour_ml} ml</td>
                     <td>${totalWater_ml} ml</td>
