@@ -26,10 +26,6 @@ footer {
     position: fixed;    /*下部に固定*/
     bottom: 0;
 }
-.foot-fixed{
-    position: fixed;
-    bottom: 2.5rem;
-}
 h1 {
     padding: 0.5rem;
     font-size: 2rem;
