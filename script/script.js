@@ -10,7 +10,7 @@ $(document).ready(function() {
         if (pourTimes > currentPourTimes) {
             for (let i = currentPourTimes; i < pourTimes; i++) {                
                 let processInput = `
-                    <div class="${i + 1}st">
+                    <div class="pour-step${i + 1}">
                         <label>${i + 1}投目</label>
                         <input type="text" class="minutes">:<input type="text" class="seconds">
                         <input type="text" class="pour-ml four-digits"> ml
@@ -20,7 +20,7 @@ $(document).ready(function() {
             }
         } else if (pourTimes < currentPourTimes) {
             for (let i = currentPourTimes; i > pourTimes && i > 1; i--) { // i>1 : 1投目は消さない
-                $(`.${i}st`).remove();
+                $(`.pour-step${i}`).remove();
             }
         }
     });
@@ -72,7 +72,7 @@ $(document).ready(function() {
         let pourTimes = $('#pour-times-input').val();
         let beanTarget = $('#bean-target').val();
         let waterTarget = $('#water-target').val();
-        let unconvert_sum_water = $(`.${pourTimes}st`).children('.pour-ml').val();
+        let unconvert_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         let convert_rate = waterTarget / unconvert_sum_water;
 
         // 変換後の豆量と総湯量を転記
@@ -89,9 +89,9 @@ $(document).ready(function() {
         `;
         let totalWater_ml = 0;
         for (let i = 1; i <= pourTimes; i++) {
-            let minutes = $(`.${i}st`).children('.minutes').val();
-            let seconds = $(`.${i}st`).children('.seconds').val();
-            let unconvert_pour_ml = $(`.${i}st`).children('.pour-ml').val();
+            let minutes = $(`.pour-step${i}`).children('.minutes').val();
+            let seconds = $(`.pour-step${i}`).children('.seconds').val();
+            let unconvert_pour_ml = $(`.${i}`).children('.pour-ml').val();
             let totalWater_ml_buf = totalWater_ml; // ひとつ前の総湯量を記録しておくバッファ
             totalWater_ml = (unconvert_pour_ml * convert_rate).toFixed(1);
             let convert_pour_ml = parseFloat(totalWater_ml - totalWater_ml_buf).toFixed(1);
