@@ -1,4 +1,4 @@
-'use strict;'
+'use strict';
 
 // 変換前レシピ入力欄の出力
 
