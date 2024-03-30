@@ -28,8 +28,40 @@ $(document).ready(function() {
     // 変換目標入力欄の入力補助
         // 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される
         // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
+    // Todo: 関数化(変換に使う値と変換先のセレクタを引数に取る関数を作成し、それを呼び出す形にする)
+    $('#bean-target').on('change', function(){
+        let beanTarget = $('#bean-target').val();
+        let waterTarget = $('#water-target').val();
+        let ratio = $('#ratio-target').val();
 
+        if (beanTarget && waterTarget) {
+            $('#ratio-target').val((waterTarget / beanTarget).toFixed(1));
+        } else if (beanTarget && ratio) {
+            $('#water-target').val((beanTarget * ratio).toFixed(1));
+        }
+    });
+    $('#water-target').on('change', function(){
+        let beanTarget = $('#bean-target').val();
+        let waterTarget = $('#water-target').val();
+        let ratio = $('#ratio-target').val();
 
+        if (beanTarget && waterTarget) {
+            $('#ratio-target').val((waterTarget / beanTarget).toFixed(1));
+        } else if (waterTarget && ratio) {
+            $('#bean-target').val((waterTarget / ratio).toFixed(1));
+        }
+    });
+    $('#ratio-target').on('change', function(){
+        let beanTarget = $('#bean-target').val();
+        let waterTarget = $('#water-target').val();
+        let ratio = $('#ratio-target').val();
+
+        if (beanTarget && ratio) {
+            $('#water-target').val((beanTarget * ratio).toFixed(1));
+        } else if (waterTarget && ratio) {
+            $('#bean-target').val((waterTarget / ratio).toFixed(1));
+        }
+    });
 
 
 
