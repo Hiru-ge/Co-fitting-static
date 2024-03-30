@@ -13,7 +13,7 @@ $(document).ready(function() {
                     <div class="${i + 1}st">
                         <label>${i + 1}投目</label>
                         <input type="text" class="minutes">:<input type="text" class="seconds">
-                        <input type="text" class="pour-ml ml"> ml
+                        <input type="text" class="pour-ml four-digits"> ml
                     </div>
                 `;
                 $('.process-input').append(processInput);

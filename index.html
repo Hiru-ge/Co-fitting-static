@@ -45,12 +45,12 @@
               <div class="1st">
                 <label>1投目</label>
                 <input type="text" class="minutes" value="00">:<input type="text" class="seconds" value="00">
-                <input type="text" class="pour-ml ml"  value="30"> ml
+                <input type="text" class="pour-ml four-digits"  value="30"> ml
               </div>
               <div class="2st">
                 <label>2投目</label>
                 <input type="text" class="minutes" value="00">:<input type="text" class="seconds"  value="30">
-                <input type="text" class="pour-ml ml"> ml
+                <input type="text" class="pour-ml four-digits"> ml
               </div>
 
             </div>
@@ -66,7 +66,7 @@
             <label for="bean-target">変換後の豆量(g): </label><input type="text" id="bean-target"> g
           </div>
           <div>
-            <label for="water-target">変換後の総湯量(ml): </label><input type="text" id="water-target" class="ml"> ml         
+            <label for="water-target">変換後の総湯量(ml): </label><input type="text" id="water-target" class="four-digits"> ml         
           </div>
           <div>
             <label for="ratio-target">変換後の豆と湯の比率: 1:</label>
@@ -88,7 +88,7 @@
       <div class="item output-recipe-div">
         <h3>変換後レシピ</h3>
         <p>変換後の豆量(g):<span class="bean-output"></span> g</p>
-        <p>変換後の総湯量(ml):<span class="water-output ml"></span> ml</p>
+        <p>変換後の総湯量(ml):<span class="water-output four-digits"></span> ml</p>
         <table class="recipe-output">
           <tr>
             <th>経過時間</th>

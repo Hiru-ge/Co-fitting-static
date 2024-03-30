@@ -82,7 +82,7 @@ input[type="text"] {
     width: 8%;
     max-width: 100px;
 }
-input[type="text"].ml{
+input[type="text"].four-digits{
     width: 12%;
     max-width: 100px;
 }
