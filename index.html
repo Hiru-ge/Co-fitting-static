@@ -40,9 +40,8 @@
           <h4>変換前レシピ</h4>
           <div class="recipe-input"> <!--変換前レシピの入力欄を生成するためのdiv-->
             <p>投数  経過時間  総注湯量</p>   
-            <div class="process-input">           
-
-              <!--以下は入力欄の完成例(これができあがるようにJavaScriptを組む)-->
+            <div class="process-input">
+              <!-- 1･2投目は確実に使うだろうから最初から表示しておく -->
               <div class="1st">
                 <label>1投目</label>
                 <input type="text" class="minutes" value="00">:<input type="text" class="seconds" value="00">
@@ -63,9 +62,6 @@
       <div class="item target-recipe-div">
         <form action="#">
           <h3>変換目標入力欄</h3>
-          <!--ここに求めるJavaScript側機能は2つ-->
-            <!-- 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される -->
-            <!-- 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される -->
           <div>
             <label for="bean-target">変換後の豆量(g): </label><input type="text" id="bean-target"> g
           </div>
@@ -73,14 +69,13 @@
             <label for="water-target">変換後の総湯量(ml): </label><input type="text" id="water-target" class="ml"> ml         
           </div>
           <div>
-            <!--変換後の豆と湯の比率入力欄-->
             <label for="ratio-target">変換後の豆と湯の比率: 1:</label>
             <input type="text" id="ratio-target">
           </div>
           <div>
             <!--蒸らし固定ON/OFF-->
             <input type="checkbox" id="steep-check">
-            <label for="steep-check">蒸らし湯量固定</label> <!--フォームのパーツと項目の名前を関連付けるためのlabel-->
+            <label for="steep-check">蒸らし湯量固定</label>
           </div>
           <div class="convert-button-parent">
             <button class="convert-button">変換</button>
