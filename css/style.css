@@ -86,3 +86,16 @@ input[type="text"].ml{
     width: 12%;
     max-width: 100px;
 }
+/*ボタン部分*/
+.convert-button-parent {
+    text-align: center;
+}
+.convert-button {
+    display: inline;
+    background-color: #c1994d;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
