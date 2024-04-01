@@ -52,6 +52,9 @@ $(document).ready(function() {
     // Todo: 蒸らし固定のON/OFFを反映できるようにする
     // Todo: リファクタリング
     $('.convert-button').on('click', function(){
+        event.preventDefault(); // ページ遷移を防ぐ
+
+
         let pourTimes = $('#pour-times-input').val();
         let beanTarget = $('#bean-target').val();
         let waterTarget = $('#water-target').val();
