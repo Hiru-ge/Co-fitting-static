@@ -99,6 +99,12 @@ $(document).ready(function() {
     
     
     // ストップウォッチ部分のトグル機能
+    // 参考: https://liginc.co.jp/356926
+        // Todo:JavaScriptで動かすと負荷がかかるので、CSSでの実装を検討
+    $('.timer-item').hide();
+    $('.accordion-head').on('click', function() {
+        $('.timer-item').slideToggle(300);
+    });
 
 
 });
