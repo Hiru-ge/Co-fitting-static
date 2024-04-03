@@ -98,6 +98,7 @@ $(document).ready(function() {
 
     // ストップウォッチ機能
     // 参考: https://tcd-theme.com/2022/06/javascript-stopwatch.html
+    // Todo: 機能改良・リファクタリング
     const time = document.getElementById('time');
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
