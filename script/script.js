@@ -159,5 +159,10 @@ $(document).ready(function() {
         $('.timer-item').slideToggle(300);
     });
 
+    // ページトップへ戻るボタン
+    $('.pageTop-mover').on('click', function() {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 500);
+    });
 
 });
