@@ -96,3 +96,12 @@ input[type="text"].four-digits{
     padding: 0.5rem 2rem;
     cursor: pointer;
 }
+.pageTop-button {
+    display: inline;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.3rem 2rem;
+    cursor: pointer;
+}
