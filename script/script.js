@@ -160,7 +160,7 @@ $(document).ready(function() {
     });
 
     // ページトップへ戻るボタン
-    $('.pageTop-mover').on('click', function() {
+    $('.pageTop-button').on('click', function() {
         event.preventDefault();
         $('html, body').animate({scrollTop: 0}, 500);
     });
