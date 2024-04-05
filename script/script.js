@@ -49,7 +49,6 @@ $(document).ready(function() {
 
     // レシピの変換･変換後レシピの出力
         // 変換ボタンを押すと、変換前レシピと変換目標の入力内容を取得し、変換後レシピを出力する
-    // Todo: 蒸らし固定のON/OFFを反映できるようにする
     // Todo: リファクタリング
     $('.convert-button').on('click', function(){
         event.preventDefault(); // ページ遷移を防ぐ
