@@ -54,16 +54,16 @@ $(document).ready(function() {
     $('.convert-button').on('click', function(){
         event.preventDefault(); // ページ遷移を防ぐ
 
-        if($('#steep-check').prop('checked')) {
-            console.log('蒸らしON');
-        }
-
         // 変換前レシピの入力内容を取得
         let pourTimes = $('#pour-times-input').val();
         let beanTarget = $('#bean-target').val();
         let waterTarget = $('#water-target').val();
         let input_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         let convert_rate = waterTarget / input_sum_water;
+        // 蒸らしON/OFFを取得
+        if($('#steep-check').prop('checked')) {
+            console.log('蒸らしON');
+        }
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(beanTarget);
