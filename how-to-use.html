@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>コーヒーレシピ変換器の使い方</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"> <!-- リセットCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/how-to-use.css">
+    <!-- レスポンシブ対応 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <h1>コーヒーレシピ変換器の使い方</h1>
+    </header>
+    
+    <div class="container">
+        <div class="how-to-item">
+            <h2>コーヒーレシピ変換器</h2>
+            <p>コーヒーレシピ変換器は、既存のコーヒーレシピを異なる投入量や豆の量に変換するためのツールです。このツールを使用すると、バランスを維持しながらレシピを調整できます。</p>
+        </div>
+        <div class="how-to-item">
+            <h2>特徴</h2>
+            <ul>
+                <li>バランスキープ: 既存のレシピと目標の投入量、豆の量を維持したまま、レシピを変換します。</li>
+                <li>簡単な操作: 入力フォームに必要な情報を入力し、変換ボタンをクリックするだけで変換されたレシピが表示されます。</li>
+                <li>ストップウォッチ機能: 抽出時に使用するためのストップウォッチ機能が付いています。</li>
+            </ul>
+        </div>
+        <div class="how-to-item">
+            <h2>使い方</h2>
+            <ol>
+                <li><b>変換前レシピ入力欄</b></li>
+                    <div>
+                        <ul>
+                            <li>変換する前のレシピの情報を入力します。</li>
+                            <li>投数、豆の量、そして各投入段階の経過時間と注湯量を記入します。</li>
+                            <li>※ 投数を入力すると、その分だけレシピ入力欄が生成されます</li>
+                        </ul>
+                    </div>
+                <li><b>変換目標入力欄</b></li>
+                    <div>
+                        <ul>
+                        <li>変換後のレシピの情報を入力します。</li>
+                            <li>目標とする豆の量、総湯量、そして豆と湯の比率を指定します。</li>
+                            <li>入力補助</li>
+                            <ul>
+                                <li>豆量と総湯量の両方が入力されると自動的に比率が計算・入力されます。</li>
+                                <li>また、豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新されます。</li>
+                            </ul>
+                        </ul>
+                    </div>
+                <li><b>変換ボタン</b></li>
+                <ul>
+                    <li>入力が完了したら、変換ボタンをクリックしてレシピを変換します。</li>
+                </ul>
+                <li><b>変換後レシピの出力</b></li>
+                <ul>
+                    <li>変換されたレシピが表形式で表示されます。</li>
+                </ul>
+            </ol>
+        </div>   
+        <div class="how-to-item">
+            <h3>注意事項</h3>
+            <p>この変換器では、豆量変化による流速(湯の抜け)の変化が加味されていません。</p>
+        </div> 
+    </div>
+    
+    
+    
+    
+
+    <footer>
+      <button class="pageTop-button">ページトップへ</button>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script/jquery-3.4.1.min.js"></script> <!-- jQuery -->
+    <script src="script/script.js"></script>
+  </body>
+</html>
