@@ -20,6 +20,7 @@ ul, ol{
 @media (max-width: 600px){
     .container{
         margin: 1rem;
+        margin-bottom: 5rem;
     }
     .how-to-item{
         margin: 0.5rem;
