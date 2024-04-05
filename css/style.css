@@ -4,7 +4,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: azure;
     margin-bottom: 5rem;
 }
 .timer-items{
