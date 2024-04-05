@@ -19,7 +19,7 @@ ul, ol{
 /*モバイル用のスタイル*/
 @media (max-width: 600px){
     .container{
-        margin: 1rem 1rem 10rem 1rem;
+        margin: 1rem 1rem 5rem 1rem;
     }
     .how-to-item{
         margin: 0.5rem;
