@@ -1,0 +1,17 @@
+/*Flexbox*/
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 2rem;
+}
+.how-to-item{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/*装飾･見栄えに関する部分*/
+ul, ol{
+    margin-left: 1rem;
+}
