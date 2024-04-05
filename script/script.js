@@ -58,18 +58,18 @@ $(document).ready(function() {
             console.log('蒸らしON');
         }
 
-
+        // 変換前レシピの入力内容を取得
         let pourTimes = $('#pour-times-input').val();
         let beanTarget = $('#bean-target').val();
         let waterTarget = $('#water-target').val();
-        let unconvert_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        let convert_rate = waterTarget / unconvert_sum_water;
+        let input_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        let convert_rate = waterTarget / input_sum_water;
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(beanTarget);
         $('.water-output').text(waterTarget);
 
-        // 変換後のレシピを出力
+        // 変換後のレシピを算出・出力
         let processOutput = `
             <tr>
                 <th>経過時間</th>
@@ -81,9 +81,12 @@ $(document).ready(function() {
         for (let i = 1; i <= pourTimes; i++) {
             let minutes = $(`.pour-step${i}`).children('.minutes').val();
             let seconds = $(`.pour-step${i}`).children('.seconds').val();
-            let unconvert_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
-            let totalWater_ml_buf = totalWater_ml; // ひとつ前の総湯量を記録しておくバッファ
-            totalWater_ml = (unconvert_pour_ml * convert_rate).toFixed(1);
+            let input_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
+            // ひとつ前の総湯量を記録しておくバッファ(各投での注湯量を計算するために必要)
+            let totalWater_ml_buf = totalWater_ml; 
+            totalWater_ml = (input_pour_ml * convert_rate).toFixed(1);
+
+            // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
             let convert_pour_ml = parseFloat(totalWater_ml - totalWater_ml_buf).toFixed(1);
             processOutput += `
                 <tr class="output-recipe-step${i}">
