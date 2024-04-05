@@ -15,3 +15,14 @@
 ul, ol{
     margin-left: 1rem;
 }
+
+/*モバイル用のスタイル*/
+@media (max-width: 600px){
+    .container{
+        margin: 1rem;
+    }
+    .how-to-item{
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+}
