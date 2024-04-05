@@ -54,6 +54,10 @@ $(document).ready(function() {
     $('.convert-button').on('click', function(){
         event.preventDefault(); // ページ遷移を防ぐ
 
+        if($('#steep-check').prop('checked')) {
+            console.log('蒸らしON');
+        }
+
 
         let pourTimes = $('#pour-times-input').val();
         let beanTarget = $('#bean-target').val();
