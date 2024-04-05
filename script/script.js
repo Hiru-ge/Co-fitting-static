@@ -60,10 +60,6 @@ $(document).ready(function() {
         let waterTarget = $('#water-target').val();
         let input_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         let convert_rate = waterTarget / input_sum_water;
-        // 蒸らしON/OFFを取得
-        if($('#steep-check').prop('checked')) {
-            console.log('蒸らしON');
-        }
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(beanTarget);
@@ -85,6 +81,10 @@ $(document).ready(function() {
             // ひとつ前の総湯量を記録しておくバッファ(各投での注湯量を計算するために必要)
             let totalWater_ml_buf = totalWater_ml; 
             totalWater_ml = (input_pour_ml * convert_rate).toFixed(1);
+            // 蒸らし固定ONの場合、1投目の総湯量は固定(元レシピの1投目の総湯量と同じ)
+            if (i === 1 && $('#steep-check').prop('checked')) {
+                totalWater_ml = $(`.pour-step1`).children('.pour-ml').val();
+            }
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
             let convert_pour_ml = parseFloat(totalWater_ml - totalWater_ml_buf).toFixed(1);
