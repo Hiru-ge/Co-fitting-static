@@ -74,19 +74,19 @@ $(document).ready(function() {
         `;
         let totalWater_ml = 0;
         for (let i = 1; i <= pourTimes; i++) {
-            let minutes = $(`.pour-step${i}`).children('.minutes').val();
-            let seconds = $(`.pour-step${i}`).children('.seconds').val();
+            let minutes = String($(`.pour-step${i}`).children('.minutes').val()).padStart(2, '0');
+            let seconds = String($(`.pour-step${i}`).children('.seconds').val()).padStart(2, '0');
             let input_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
             // ひとつ前の総湯量を記録しておくバッファ(各投での注湯量を計算するために必要)
-            let totalWater_ml_buf = totalWater_ml; 
-            totalWater_ml = (input_pour_ml * convert_rate).toFixed(1);
+            let totalWater_ml_buf = Math.trunc(totalWater_ml); 
+            totalWater_ml = Math.trunc(input_pour_ml * convert_rate);
             // 蒸らし固定ONの場合、1投目の総湯量は固定(元レシピの1投目の総湯量と同じ)
             if (i === 1 && $('#steep-check').prop('checked')) {
                 totalWater_ml = $(`.pour-step1`).children('.pour-ml').val();
             }
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
-            let convert_pour_ml = parseFloat(totalWater_ml - totalWater_ml_buf).toFixed(1);
+            let convert_pour_ml = Math.trunc(totalWater_ml - totalWater_ml_buf);
             processOutput += `
                 <tr class="output-recipe-step${i}">
                     <td>${minutes}:${seconds}</td>
