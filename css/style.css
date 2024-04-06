@@ -48,16 +48,25 @@ div.introduce {
 .output-recipe-div{
     background-color: #e1c0bd;
 }
-.timer-div{
-    background-color: #bdc6b7;
-}
 .item {
     margin: 0.5rem 1rem;
     padding: 1rem;
     width: 28rem;
     border-radius: 1rem;
 }
-
+/*ストップウォッチ部分*/
+.timer-div{
+    background-color: #bdc6b7;
+}
+#time {
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+.timer-button {
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
 
 /*フォーム部分*/
 form div {
