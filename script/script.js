@@ -162,6 +162,7 @@ $(document).ready(function() {
         // Todo:JavaScriptで動かすと負荷がかかるので、CSSでの実装を検討
     $('.timer-item').hide();
     $('.accordion-head').on('click', function() {
+        $('.accordion-toggle').toggleClass('rotate-90');
         $('.timer-item').slideToggle(300);
     });
 

@@ -68,6 +68,17 @@ div.introduce {
     margin: 0.5rem;
     padding: 0.5rem 0rem;
 }
+.accordion-toggle{
+    margin-right: 0.5rem;
+}
+
+/*ストップウォッチのトグル回転機能*/
+.accordion-head {
+    display: flex;
+}
+.rotate-90 { 
+    transform: rotate(90deg);
+}
 
 /*フォーム部分*/
 form div {
