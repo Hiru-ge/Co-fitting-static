@@ -165,11 +165,4 @@ $(document).ready(function() {
         $('.accordion-toggle').toggleClass('rotate-90');
         $('.timer-item').slideToggle(300);
     });
-
-    // ページトップへ戻るボタン
-    $('.pageTop-button').on('click', function() {
-        event.preventDefault();
-        $('html, body').animate({scrollTop: 0}, 500);
-    });
-
 });
