@@ -159,7 +159,7 @@ $(document).ready(function() {
     
     // ストップウォッチ部分のトグル機能
     // 参考: https://liginc.co.jp/356926
-        // Todo:JavaScriptで動かすと負荷がかかるので、CSSでの実装を検討
+        // Tips:JavaScriptで動かすと負荷がかかるので、必要に迫られればCSSでの実装も検討(滑らかに閉じるのが難しかったので現在はJSで実装)
     $('.timer-item').hide();
     $('.accordion-head').on('click', function() {
         $('.accordion-toggle').toggleClass('rotate-90');
