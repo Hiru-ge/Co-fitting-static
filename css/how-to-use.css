@@ -1,27 +1,30 @@
 /*Flexbox*/
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin: 2rem;
 }
-.how-to-item{
+
+.how-to-item {
     margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
 }
 
 /*装飾･見栄えに関する部分*/
-ul, ol{
+ul,
+ol {
     margin-left: 1rem;
 }
 
 /*モバイル用のスタイル*/
-@media (max-width: 600px){
-    .container{
+@media (max-width: 600px) {
+    .container {
         margin: 1rem 1rem 5rem 1rem;
     }
-    .how-to-item{
+
+    .how-to-item {
         margin: 0.5rem;
         padding: 0.5rem;
     }

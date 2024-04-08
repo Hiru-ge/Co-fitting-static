@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>コーヒーレシピ変換器の使い方</title>
     <!-- CSS -->
@@ -9,12 +10,13 @@
     <link rel="stylesheet" href="css/how-to-use.css">
     <!-- レスポンシブ対応 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <h1>コーヒーレシピ変換器の使い方</h1>
+        <h1>コーヒーレシピ変換器の使い方</h1>
     </header>
-    
+
     <div class="container">
         <div class="how-to-item">
             <h2>コーヒーレシピ変換器</h2>
@@ -23,15 +25,21 @@
         <div class="how-to-item">
             <h2>特徴</h2>
             <ul>
-                <li><h3>バランスキープ</h3></li>
+                <li>
+                    <h3>バランスキープ</h3>
+                </li>
                 <ul>
                     <li>既存レシピにおける各投の割合を維持したまま、レシピを変換します。</li>
                 </ul>
-                <li><h3>簡単な操作</h3></li>
+                <li>
+                    <h3>簡単な操作</h3>
+                </li>
                 <ul>
                     <li>入力フォームに必要な情報を入力し、変換ボタンをクリックするだけで変換されたレシピが表示されます。</li>
                 </ul>
-                <li><h3>ストップウォッチ機能</h3></li>
+                <li>
+                    <h3>ストップウォッチ機能</h3>
+                </li>
                 <ul>
                     <li>抽出時に使用するためのストップウォッチ機能が付いています。</li>
                 </ul>
@@ -40,55 +48,64 @@
         <div class="how-to-item">
             <h2>使い方</h2>
             <ol>
-                <h3><li>変換前レシピ入力欄</li></h3>
-                    <div>
-                        <ul>
-                            <li>変換する前のレシピの情報を入力します。</li>
-                            <li>投数、豆の量、そして各投入段階の経過時間と注湯量を記入します。</li>
-                            <li>※ 投数を入力すると、その分だけレシピ入力欄が生成されます</li>
-                        </ul>
-                    </div>
-                <h3><li>変換目標入力欄</li></h3>
-                    <div>
-                        <ul>
+                <h3>
+                    <li>変換前レシピ入力欄</li>
+                </h3>
+                <div>
+                    <ul>
+                        <li>変換する前のレシピの情報を入力します。</li>
+                        <li>投数、豆の量、そして各投入段階の経過時間と注湯量を記入します。</li>
+                        <li>※ 投数を入力すると、その分だけレシピ入力欄が生成されます</li>
+                    </ul>
+                </div>
+                <h3>
+                    <li>変換目標入力欄</li>
+                </h3>
+                <div>
+                    <ul>
                         <li>変換後のレシピの情報を入力します。</li>
-                            <li>目標とする豆の量、総湯量、そして豆と湯の比率を指定します。</li>
-                            <li>入力補助</li>
-                            <ul>
-                                <li>豆量と総湯量の両方が入力されると自動的に比率が計算・入力されます。</li>
-                                <li>また、豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新されます。</li>
-                            </ul>
+                        <li>目標とする豆の量、総湯量、そして豆と湯の比率を指定します。</li>
+                        <li>入力補助</li>
+                        <ul>
+                            <li>豆量と総湯量の両方が入力されると自動的に比率が計算・入力されます。</li>
+                            <li>また、豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新されます。</li>
                         </ul>
-                    </div>
-                <h3><li>変換ボタン</li></h3>
+                    </ul>
+                </div>
+                <h3>
+                    <li>変換ボタン</li>
+                </h3>
                 <ul>
                     <li>入力が完了したら、変換ボタンをクリックしてレシピを変換します。</li>
                 </ul>
-                <h3><li>変換後レシピの出力</li></h3>
+                <h3>
+                    <li>変換後レシピの出力</li>
+                </h3>
                 <ul>
                     <li>変換されたレシピが表形式で表示されます。</li>
                 </ul>
             </ol>
-        </div>   
+        </div>
         <div class="how-to-item">
             <h2>注意事項</h2>
             <p>この変換器では、豆量変化による流速(湯の抜け)の変化が加味されていません。単純な比率変換であることを理解した上で、変換結果を参考にしてください。</p>
             <p>湯の抜けが考慮されていないため、投数が少ない(3投以下)とかなり無理のあるレシピになってしまうことがあります。投数の多いレシピでお試しください。</p>
             <p>なお、これらの問題に対する改善を検討中ですが、現在具体的な改善の目処は立っていません。</p>
-        </div> 
+        </div>
     </div>
-    
-    
-    
-    
+
+
+
+
 
     <footer>
         <p class="copy-right">©Icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
-      <button class="pageTop-button">ページトップへ</button>
+        <button class="pageTop-button">ページトップへ</button>
     </footer>
-    
+
     <!-- JavaScript -->
     <script src="script/jquery-3.4.1.min.js"></script> <!-- jQuery -->
     <script src="script/common.js"></script>
-  </body>
+</body>
+
 </html>
