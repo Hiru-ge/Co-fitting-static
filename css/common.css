@@ -21,3 +21,7 @@ h1 {
 h3, h4 {
     padding: 0.5rem 0.5rem 0 0;
 }
+.copy-right {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
