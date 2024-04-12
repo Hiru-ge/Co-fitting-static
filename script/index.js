@@ -103,7 +103,6 @@ $(document).ready(function() {
 
 
     // ストップウォッチ機能
-    // 参考: https://tcd-theme.com/2022/06/javascript-stopwatch.html
     // Todo: 機能改良・リファクタリング
     const time = document.getElementById('time');
     const startButton = document.getElementById('start');
@@ -158,8 +157,7 @@ $(document).ready(function() {
     
     
     // ストップウォッチ部分のトグル機能
-    // 参考: https://liginc.co.jp/356926
-        // Tips:JavaScriptで動かすと負荷がかかるので、必要に迫られればCSSでの実装も検討(滑らかに閉じるのが難しかったので現在はJSで実装)
+    // Tips:JavaScriptで動かすと負荷がかかるので、必要に迫られればCSSでの実装も検討(滑らかに閉じるのが難しかったので現在はJSで実装)
     $('.timer-item').hide();
     $('.accordion-head').on('click', function() {
         $('.accordion-toggle').toggleClass('rotate-90');
