@@ -90,13 +90,14 @@ $(document).ready(function() {
         $('.water-output').text(waterTarget);
 
         // 変換後のレシピを算出・出力
-        let processOutput = `
+        let defaultProcessOutput = `
             <tr>
                 <th>経過時間</th>
                 <th>注湯量</th>
                 <th>総注湯量</th>
             </tr>
         `;
+        let processOutput = defaultProcessOutput;
         let totalWater_ml = 0;
         for (let i = 1; i <= pourTimes; i++) {
             let minutes = String($(`.pour-step${i}`).children('.minutes').val()).padStart(2, '0');
@@ -120,7 +121,10 @@ $(document).ready(function() {
                 </tr>
             `;
         }
-        $('.recipe-output').html(processOutput);
+        // Tips:未入力時に変換ボタンを押したとき、表見出しが出力されるのが嫌だったのでデフォルト文と比較して出力するかどうかを判定
+        if (processOutput !== defaultProcessOutput){
+            $('.recipe-output').html(processOutput);
+        }
 
     });
 
