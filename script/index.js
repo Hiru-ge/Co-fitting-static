@@ -51,7 +51,8 @@ $(document).ready(function() {
         // 変換ボタンを押すと、変換前レシピと変換目標の入力内容を取得し、変換後レシピを出力する
     // Todo: リファクタリング
     function inputError_Detector(pourTimes,input_sum_water, beanTarget, waterTarget) {
-        let errorMassage = '【入力不備】\n';
+        let defaultMessage = '【入力不備】\n'; // エラーメッセージの初期値(エラーが検知されるとこれに追加されていく)
+        let errorMassage = defaultMessage;
         if (!pourTimes){
             errorMassage += '･変換前投数\n';
         }
@@ -65,7 +66,7 @@ $(document).ready(function() {
             errorMassage += '･変換前総湯量\n';
         }
 
-        if(errorMassage !== '【入力不備】\n'){  // エラー箇所が検知された場合
+        if(errorMassage !== defaultMessage){
             window.alert(errorMassage);
         }
     }
