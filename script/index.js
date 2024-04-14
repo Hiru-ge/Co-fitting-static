@@ -50,7 +50,27 @@ $(document).ready(function() {
     // レシピの変換･変換後レシピの出力
         // 変換ボタンを押すと、変換前レシピと変換目標の入力内容を取得し、変換後レシピを出力する
     // Todo: リファクタリング
-    // Todo: 入力に不備がある場合、window.alert()で適切にエラーを表示する
+    function inputError_Detector(pourTimes,input_sum_water, beanTarget, waterTarget) {
+        let errorMassage = '【入力不備】\n';
+        if (!pourTimes){
+            errorMassage += '･変換前投数\n';
+        }
+        if (!input_sum_water){
+            errorMassage += '･変換前レシピ\n';
+        }
+        if (!beanTarget){
+            errorMassage += '･変換前豆量\n';
+        }
+        if (!waterTarget){
+            errorMassage += '･変換前総湯量\n';
+        }
+
+        if(errorMassage !== '【入力不備】\n'){  // エラー箇所が検知された場合
+            window.alert(errorMassage);
+        }
+    }
+
+
     $('.convert-button').on('click', function(){
         event.preventDefault(); // ページ遷移を防ぐ
 
@@ -60,6 +80,9 @@ $(document).ready(function() {
         let waterTarget = $('#water-target').val();
         let input_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         let convert_rate = waterTarget / input_sum_water;
+
+        // エラー検知関数に処理を投げる
+        inputError_Detector(pourTimes,input_sum_water, beanTarget, waterTarget);
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(beanTarget);
