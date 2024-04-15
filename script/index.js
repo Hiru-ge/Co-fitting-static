@@ -4,8 +4,8 @@ $(document).ready(function() {
         // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
         // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
     $('#pour-times-input').on('change', function(){
-        let pourTimes = $('#pour-times-input').val();
-        let currentPourTimes = $('.process-input').children().length;
+        const pourTimes = $('#pour-times-input').val();
+        const currentPourTimes = $('.process-input').children().length;
 
         if (pourTimes > currentPourTimes) {
             for (let i = currentPourTimes; i < pourTimes; i++) {                
@@ -76,11 +76,11 @@ $(document).ready(function() {
         event.preventDefault(); // ページ遷移を防ぐ
 
         // 変換前レシピの入力内容を取得
-        let pourTimes = $('#pour-times-input').val();
-        let beanTarget = $('#bean-target').val();
-        let waterTarget = $('#water-target').val();
-        let input_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        let convert_rate = waterTarget / input_sum_water;
+        const pourTimes = $('#pour-times-input').val();
+        const beanTarget = $('#bean-target').val();
+        const waterTarget = $('#water-target').val();
+        const input_sum_water = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        const convert_rate = waterTarget / input_sum_water;
 
         // エラー検知関数に処理を投げる
         inputError_Detector(pourTimes,input_sum_water, beanTarget, waterTarget);
@@ -90,7 +90,7 @@ $(document).ready(function() {
         $('.water-output').text(waterTarget);
 
         // 変換後のレシピを算出・出力
-        let defaultProcessOutput = `
+        const defaultProcessOutput = `
             <tr>
                 <th>経過時間</th>
                 <th>注湯量</th>
