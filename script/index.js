@@ -29,28 +29,28 @@ $(document).ready(function() {
         // 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される
         // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
     // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
-    function targetInput_Supporter(waterTarget, beanTarget, ratioTarget) {
-        if (beanTarget && waterTarget) {
-            $('#ratio-target').val((waterTarget / beanTarget).toFixed(1));
-        } else if (beanTarget && ratioTarget) {
-            $('#water-target').val((beanTarget * ratioTarget).toFixed(1));
-        } else if (waterTarget && ratioTarget) {
-            $('#bean-target').val((waterTarget / ratioTarget).toFixed(1));
+    function targetInput_Supporter(targetWater, targetBean, targetRatio) {
+        if (targetBean && targetWater) {
+            $('#ratio-target').val((targetWater / targetBean).toFixed(1));
+        } else if (targetBean && targetRatio) {
+            $('#water-target').val((targetBean * targetRatio).toFixed(1));
+        } else if (targetWater && targetRatio) {
+            $('#bean-target').val((targetWater / targetRatio).toFixed(1));
         }
     }
 
     $('.input_support').on('change', function(){
-        let beanTarget = $('#bean-target').val();
-        let waterTarget = $('#water-target').val();
-        let ratioTarget = $('#ratio-target').val();
-        targetInput_Supporter(waterTarget, beanTarget, ratioTarget);
+        let targetBean = $('#bean-target').val();
+        let targetWater = $('#water-target').val();
+        let targetRatio = $('#ratio-target').val();
+        targetInput_Supporter(targetWater, targetBean, targetRatio);
     });
 
 
     // レシピの変換･変換後レシピの出力
         // 変換ボタンを押すと、変換前レシピと変換目標の入力内容を取得し、変換後レシピを出力する
     // Todo: リファクタリング
-    function inputError_Detector(pourTimes,originSumWater, beanTarget, waterTarget) {
+    function inputError_Detector(pourTimes,originSumWater, targetBean, targetWater) {
         let defaultMessage = '【入力不備】\n'; // エラーメッセージの初期値(エラーが検知されるとこれに追加されていく)
         let errorMassage = defaultMessage;
         if (!pourTimes){
@@ -59,10 +59,10 @@ $(document).ready(function() {
         if (!originSumWater){
             errorMassage += '･変換前レシピ\n';
         }
-        if (!beanTarget){
+        if (!targetBean){
             errorMassage += '･変換前豆量\n';
         }
-        if (!waterTarget){
+        if (!targetWater){
             errorMassage += '･変換前総湯量\n';
         }
 
@@ -77,17 +77,17 @@ $(document).ready(function() {
 
         // 変換前レシピの入力内容を取得
         const pourTimes = $('#pour-times-input').val();
-        const beanTarget = $('#bean-target').val();
-        const waterTarget = $('#water-target').val();
+        const targetBean = $('#bean-target').val();
+        const targetWater = $('#water-target').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        const convert_rate = waterTarget / originSumWater;
+        const convert_rate = targetWater / originSumWater;
 
         // エラー検知関数に処理を投げる
-        inputError_Detector(pourTimes,originSumWater, beanTarget, waterTarget);
+        inputError_Detector(pourTimes,originSumWater, targetBean, targetWater);
 
         // 変換後の豆量と総湯量を転記
-        $('.bean-output').text(beanTarget);
-        $('.water-output').text(waterTarget);
+        $('.bean-output').text(targetBean);
+        $('.water-output').text(targetWater);
 
         // 変換後のレシピを算出・出力
         const defaultProcessOutput = `
