@@ -18,6 +18,17 @@ ol {
     margin-left: 1rem;
 }
 
+.supplement{
+    list-style: none;   /*リストマーカーを消す(後で※を付けるため)*/
+    text-indent: -1.5em;    /*リストの最初の文字を左にずらす(リストマーカーの分戻して、他のli要素と揃える)*/
+    font-size: 0.9rem;
+}
+
+li.supplement::before {
+    content: "※";
+    margin-right: 0.5em; /*※の後に空白を入れるためのmargin*/
+}
+
 /*モバイル用のスタイル*/
 @media (max-width: 600px) {
     .container {
