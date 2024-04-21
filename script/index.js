@@ -35,7 +35,7 @@ $(document).ready(function() {
         // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
     // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
     // fixme: 総湯量(or 豆量)と比率を入力したとき、豆量(or 総湯量)が更新されない
-    function targetInput_Supporter(targetWater, targetBean, targetRatio) {
+    function targetInput_Supporter(targetBean, targetWater, targetRatio) {
         if (targetBean && targetWater) {
             $('#ratio-target').val((targetWater / targetBean).toFixed(1));
         } else if (targetBean && targetRatio) {
@@ -49,7 +49,7 @@ $(document).ready(function() {
         let targetBean = $('#bean-target').val();
         let targetWater = $('#water-target').val();
         let targetRatio = $('#ratio-target').val();
-        targetInput_Supporter(targetWater, targetBean, targetRatio);
+        targetInput_Supporter(targetBean, targetWater, targetRatio);
     });
 
 
