@@ -28,6 +28,7 @@ $(document).ready(function() {
     // 変換前レシピの入力補助
         // Todo: 規定文字数入力したら次の入力欄に自動でフォーカスが移るようにする
     // 比率計算(変換前レシピの入力内容を取得し、比率を計算して出力する機能)
+        // Todo: リファクタリング(比率計算処理を関数化して、目標入力欄の入力補助と共通化する)
     $('.process-input').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
