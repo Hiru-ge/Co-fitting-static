@@ -26,8 +26,16 @@ $(document).ready(function() {
     });
 
     // 変換前レシピの入力補助
-        // Todo: 比率計算(変換前レシピの入力内容を取得し、比率を計算して出力する機能)を実装する
         // Todo: 規定文字数入力したら次の入力欄に自動でフォーカスが移るようにする
+    // 比率計算(変換前レシピの入力内容を取得し、比率を計算して出力する機能)
+    $('.process-input').on('change', function(){
+        const pourTimes = $('#pour-times-input').val();
+        const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        const originBean = $('#bean-input').val();
+        const originRatio = (originSumWater / originBean).toFixed(1);
+        console.log(originRatio);
+        $('#origin-ratio').html(originRatio);
+    });
 
 
     // 変換目標入力欄の入力補助
