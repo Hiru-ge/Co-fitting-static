@@ -27,14 +27,33 @@ $(document).ready(function() {
 
     // 変換前レシピの入力補助
         // Todo: 規定文字数入力したら次の入力欄に自動でフォーカスが移るようにする
+    // 入力補助関数(豆量, 総湯量, 比率): 引数を2つ渡すと、残りの1つを計算して返す
+        // 配列として渡すことで、渡したい引数だけを明示的に指定できる(「総湯量は渡さない」のようなこともできるはず)
+    function inputSupporter([Bean_g, water_ml, ratio]) {
+        console.log("Bean_g:", Bean_g, "water_ml:", water_ml, "ratio:", ratio);
+        if(Bean_g && water_ml){
+            ratio = (water_ml / Bean_g).toFixed(1);
+            result = [Bean_g, water_ml, ratio]
+            return ratio;
+        }else if(Bean_g && ratio){
+            water_ml = (Bean_g * ratio).toFixed(1);
+            return water_ml;
+        }else if(water_ml && ratio){
+            Bean_g = (water_ml / ratio).toFixed(1);
+            return Bean_g;
+        }else{
+            console.log('Error[ratioCalculator]: 引数が不足しています');
+        }
+    }
+
     // 比率計算(変換前レシピの入力内容を取得し、比率を計算して出力する機能)
         // Todo: リファクタリング(比率計算処理を関数化して、目標入力欄の入力補助と共通化する)
     $('.process-input').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         const originBean = $('#bean-input').val();
-        const originRatio = (originSumWater / originBean).toFixed(1);
-        console.log(originRatio);
+        
+        let originRatio = inputSupporter([/* 豆量=*/originBean, /* 総湯量=*/originSumWater, /* 比率=*/'']);
         $('#origin-ratio').html(originRatio);
     });
 
