@@ -45,7 +45,7 @@ $(document).ready(function() {
         }
     }
 
-    // 比率計算(変換前レシピの入力内容を取得し、比率を計算して出力する機能)
+    // 元レシピの比率計算(変換後レシピと元レシピの比率を揃える用にこれがあると便利かも)
     $('.process-input').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
@@ -56,9 +56,7 @@ $(document).ready(function() {
     });
 
 
-    // 変換目標入力欄の入力補助
-        // 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される
-        // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
+    // 変換目標入力欄の入力補助(豆量･総湯量･比率のどれか2つを入力すると、残り1つを計算して補完する)
     // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
     $('.input_support').on('change', function(){
         let targetBean = $('#bean-target').val();
@@ -82,8 +80,6 @@ $(document).ready(function() {
     });
 
 
-    // レシピの変換･変換後レシピの出力
-        // 変換ボタンを押すと、変換前レシピと変換目標の入力内容を取得し、変換後レシピを出力する
     function inputError_Detector(pourTimes,originSumWater, targetBean, targetWater) {
         let defaultMessage = '【入力不備】\n'; // エラーメッセージの初期値(エラーが検知されるとこれに追加されていく)
         let errorMassage = defaultMessage;
@@ -105,7 +101,7 @@ $(document).ready(function() {
         }
     }
 
-
+    // レシピの変換･変換後レシピの出力
     $('.convert-button').on('click', function(){
         event.preventDefault(); // ページ遷移を防ぐ
 
