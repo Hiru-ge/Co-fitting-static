@@ -33,7 +33,6 @@ $(document).ready(function() {
         console.log("Bean_g:", Bean_g, "water_ml:", water_ml, "ratio:", ratio);
         if(Bean_g && water_ml){
             ratio = (water_ml / Bean_g).toFixed(1);
-            result = [Bean_g, water_ml, ratio]
             return ratio;
         }else if(Bean_g && ratio){
             water_ml = (Bean_g * ratio).toFixed(1);
