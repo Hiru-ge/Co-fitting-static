@@ -41,7 +41,7 @@ $(document).ready(function() {
             Bean_g = (water_ml / ratio).toFixed(1);
             return Bean_g;
         }else{
-            console.log('Error[ratioCalculator]: 引数が不足しています');
+            console.log('Error[inputSupporter]: 引数が不足しています');
         }
     }
 
