@@ -73,9 +73,12 @@ $(document).ready(function() {
         }else if (!targetRatio){
             targetRatio = inputSupporter([targetBean, targetWater, '']);
             $('#ratio-target').val(targetRatio);
-        }else(
-            console.log('Error[変換目標入力補助]: 入力内容が不足しています')
-        )
+        // これ以降はエラー検知
+        }else if(targetBean && targetWater && targetRatio){
+            console.log('Error[変換目標入力補助]: 入力項目が多すぎます');
+        }else{
+            console.log('Error[変換目標入力補助]: 入力項目が不足しています');
+        }
     });
 
 
