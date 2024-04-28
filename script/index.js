@@ -46,7 +46,6 @@ $(document).ready(function() {
     }
 
     // 比率計算(変換前レシピの入力内容を取得し、比率を計算して出力する機能)
-        // Todo: リファクタリング(比率計算処理を関数化して、目標入力欄の入力補助と共通化する)
     $('.process-input').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
@@ -61,21 +60,22 @@ $(document).ready(function() {
         // 1.豆量と総湯量の両方が入力されると自動的に比率が計算・入力される
         // 2.豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新される
     // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
-    function targetInput_Supporter(targetBean, targetWater, targetRatio) {
-        if (targetBean && targetWater) {
-            $('#ratio-target').val((targetWater / targetBean).toFixed(1));
-        } else if (targetBean && targetRatio) {
-            $('#water-target').val((targetBean * targetRatio).toFixed(1));
-        } else if (targetWater && targetRatio) {
-            $('#bean-target').val((targetWater / targetRatio).toFixed(1));
-        }
-    }
-
     $('.input_support').on('change', function(){
         let targetBean = $('#bean-target').val();
         let targetWater = $('#water-target').val();
         let targetRatio = $('#ratio-target').val();
-        targetInput_Supporter(targetBean, targetWater, targetRatio);
+        if (!targetBean){
+            targetBean = inputSupporter(['', targetWater, targetRatio]);
+            $('#bean-target').val(targetBean);
+        }else if (!targetWater){
+            targetWater = inputSupporter([targetBean, '', targetRatio]);
+            $('#water-target').val(targetWater);
+        }else if (!targetRatio){
+            targetRatio = inputSupporter([targetBean, targetWater, '']);
+            $('#ratio-target').val(targetRatio);
+        }else(
+            console.log('Error[変換目標入力補助]: 入力内容が不足しています')
+        )
     });
 
 
