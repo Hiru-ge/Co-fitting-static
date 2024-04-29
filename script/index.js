@@ -28,7 +28,7 @@ $(document).ready(function() {
     // 変換前レシピの入力補助
     // 入力補助関数(豆量, 総湯量, 比率): 引数を2つ渡すと、残りの1つを計算して返す
         // 配列として渡すことで、渡したい引数だけを明示的に指定できる(「総湯量は渡さない」のようなこともできるはず)
-    function inputSupporter([bean_g, water_ml, ratio]) {
+    function brewParameterCompleter([bean_g, water_ml, ratio]) {
         if(bean_g && water_ml){
             ratio = (water_ml / bean_g).toFixed(1);
             return ratio;
@@ -39,7 +39,7 @@ $(document).ready(function() {
             bean_g = (water_ml / ratio).toFixed(1);
             return bean_g;
         }else{
-            console.log('Error[inputSupporter]: 引数が不足しています');
+            console.log('Error[brewParameterCompleter]: 引数が不足しています');
         }
     }
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         const originBean = $('#bean-input').val();
         
-        let originRatio = inputSupporter([/* 豆量=*/originBean, /* 総湯量=*/originSumWater, /* 比率=*/'']);
+        let originRatio = brewParameterCompleter([/* 豆量=*/originBean, /* 総湯量=*/originSumWater, /* 比率=*/'']);
         $('#origin-ratio').html(originRatio);
     });
 
@@ -61,13 +61,13 @@ $(document).ready(function() {
         let targetWater = $('#water-target').val();
         let targetRatio = $('#ratio-target').val();
         if (!targetBean){
-            targetBean = inputSupporter(['', targetWater, targetRatio]);
+            targetBean = brewParameterCompleter(['', targetWater, targetRatio]);
             $('#bean-target').val(targetBean);
         }else if (!targetWater){
-            targetWater = inputSupporter([targetBean, '', targetRatio]);
+            targetWater = brewParameterCompleter([targetBean, '', targetRatio]);
             $('#water-target').val(targetWater);
         }else if (!targetRatio){
-            targetRatio = inputSupporter([targetBean, targetWater, '']);
+            targetRatio = brewParameterCompleter([targetBean, targetWater, '']);
             $('#ratio-target').val(targetRatio);
         // これ以降はエラー検知
         }else if(targetBean && targetWater && targetRatio){
