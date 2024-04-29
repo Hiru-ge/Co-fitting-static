@@ -29,7 +29,6 @@ $(document).ready(function() {
     // 入力補助関数(豆量, 総湯量, 比率): 引数を2つ渡すと、残りの1つを計算して返す
         // 配列として渡すことで、渡したい引数だけを明示的に指定できる(「総湯量は渡さない」のようなこともできるはず)
     function inputSupporter([bean_g, water_ml, ratio]) {
-        console.log("bean_g:", bean_g, "water_ml:", water_ml, "ratio:", ratio);
         if(bean_g && water_ml){
             ratio = (water_ml / bean_g).toFixed(1);
             return ratio;
