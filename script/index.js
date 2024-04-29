@@ -29,17 +29,17 @@ $(document).ready(function() {
         // Todo: 規定文字数入力したら次の入力欄に自動でフォーカスが移るようにする
     // 入力補助関数(豆量, 総湯量, 比率): 引数を2つ渡すと、残りの1つを計算して返す
         // 配列として渡すことで、渡したい引数だけを明示的に指定できる(「総湯量は渡さない」のようなこともできるはず)
-    function inputSupporter([Bean_g, water_ml, ratio]) {
-        console.log("Bean_g:", Bean_g, "water_ml:", water_ml, "ratio:", ratio);
-        if(Bean_g && water_ml){
-            ratio = (water_ml / Bean_g).toFixed(1);
+    function inputSupporter([bean_g, water_ml, ratio]) {
+        console.log("bean_g:", bean_g, "water_ml:", water_ml, "ratio:", ratio);
+        if(bean_g && water_ml){
+            ratio = (water_ml / bean_g).toFixed(1);
             return ratio;
-        }else if(Bean_g && ratio){
-            water_ml = (Bean_g * ratio).toFixed(1);
+        }else if(bean_g && ratio){
+            water_ml = (bean_g * ratio).toFixed(1);
             return water_ml;
         }else if(water_ml && ratio){
-            Bean_g = (water_ml / ratio).toFixed(1);
-            return Bean_g;
+            bean_g = (water_ml / ratio).toFixed(1);
+            return bean_g;
         }else{
             console.log('Error[inputSupporter]: 引数が不足しています');
         }
