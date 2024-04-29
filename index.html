@@ -30,6 +30,22 @@
 </head>
 
 <body>
+
+    <!-- 規定文字数入力されたら次のフォームにフォーカスを移すユーザー補助(本当はJavaScriptファイルの書きたいけど、事前に宣言しておく必要があるので一旦ここに置く) -->
+    <script>
+        function nextField(str) {
+            if (str.value.length >= str.maxLength) {
+                for (var i = 0, elm = str.form.elements; i < elm.length; i++) {
+                    if (elm[i] == str) {
+                        (elm[i + 1] || elm[0]).focus();
+                        break;
+                    }
+                }
+            }
+            return (str);
+        }
+    </script>
+
     <header>
         <h1>コーヒーレシピ変換器</h1>
     </header>
@@ -47,11 +63,11 @@
                 <!--変換前レシピの投数入力欄-->
                 <div>
                     <label for="pour-times-input">変換前レシピの投数: </label>
-                    <input type="text" id="pour-times-input"> 投
+                    <input type="text" id="pour-times-input" maxlength="1" onkeyup="nextField(this)"> 投
                 </div>
                 <!--変換前レシピの豆量入力欄-->
                 <div>
-                    <label for="bean-input">変換前レシピの豆量(g): </label><input type="text" id="bean-input"> g
+                    <label for="bean-input">変換前レシピの豆量(g): </label><input type="text" id="bean-input" maxlength="2" onkeyup="nextField(this)"> g
                 </div>
                 <!-- 変換前レシピの比率表示欄 -->
                 <div>
@@ -65,13 +81,13 @@
                         <!-- 1･2投目は確実に使うだろうから最初から表示しておく -->
                         <div class="pour-step1">
                             <label>1投目</label>
-                            <input type="text" class="minutes" value="00">:<input type="text" class="seconds" value="00">
-                            <input type="text" class="pour-ml four-digits" value="30"> ml
+                            <input type="text" class="minutes" value="00" maxlength="1" onkeyup="nextField(this)">:<input type="text" class="seconds" value="00" maxlength="2" onkeyup="nextField(this)">
+                            <input type="text" class="pour-ml four-digits" value="30" maxlength="2" onkeyup="nextField(this)"> ml
                         </div>
                         <div class="pour-step2">
                             <label>2投目</label>
-                            <input type="text" class="minutes" value="00">:<input type="text" class="seconds" value="30">
-                            <input type="text" class="pour-ml four-digits"> ml
+                            <input type="text" class="minutes" value="00" maxlength="1" onkeyup="nextField(this)">:<input type="text" class="seconds" value="30" maxlength="2" onkeyup="nextField(this)">
+                            <input type="text" class="pour-ml four-digits" maxlength="3" onkeyup="nextField(this)"> ml
                         </div>
 
                     </div>
@@ -85,15 +101,15 @@
                 <h3>変換目標入力欄</h3>
                 <div>
                     <label for="bean-target">変換後の豆量(g): </label>
-                    <input type="text" id="bean-target" class="input_support four-digits"> g
+                    <input type="text" id="bean-target" class="input_support four-digits" maxlength="2" onkeyup="nextField(this)"> g
                 </div>
                 <div>
                     <label for="water-target">変換後の総湯量(ml): </label>
-                    <input type="text" id="water-target" class="input_support four-digits"> ml
+                    <input type="text" id="water-target" class="input_support four-digits" maxlength="3" onkeyup="nextField(this)"> ml
                 </div>
                 <div>
                     <label for="ratio-target" class="input_support">変換後の豆と湯の比率: 1:</label>
-                    <input type="text" id="ratio-target" class="input_support four-digits">
+                    <input type="text" id="ratio-target" class="input_support four-digits" maxlength="2" onkeyup="nextField(this)">
                 </div>
                 <div>
                     <!--蒸らし固定ON/OFF-->
