@@ -13,7 +13,7 @@ $(document).ready(function() {
                     <div class="pour-step${i + 1}">
                         <label>${i + 1}投目</label>
                         <input type="text" class="minutes" maxlength="1" onkeyup="nextField(this)">:<input type="text" class="seconds" maxlength="2" onkeyup="nextField(this)">
-                        <input type="text" class="pour-ml four-digits" maxlength="3" onkeyup="nextField(this)"> ml
+                        <input type="text" class="pour-ml wide-input" maxlength="3" onkeyup="nextField(this)"> ml
                     </div>
                 `;
                 $('.process-input').append(processInput);
