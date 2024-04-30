@@ -91,7 +91,7 @@ input[type="text"] {
     max-width: 100px;
 }
 
-input[type="text"].four-digits {
+input[type="text"].wide-input {
     width: 12%;
     max-width: 100px;
 }
