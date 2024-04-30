@@ -87,12 +87,12 @@ textarea {
 }
 
 input[type="text"] {
-    width: 8%;
+    width: 10%;
     max-width: 100px;
 }
 
 input[type="text"].wide-input {
-    width: 12%;
+    width: 15%;
     max-width: 100px;
 }
 
