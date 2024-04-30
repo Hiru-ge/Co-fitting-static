@@ -44,7 +44,7 @@ $(document).ready(function() {
     }
 
     // 元レシピの比率計算(変換後レシピと元レシピの比率を揃える用にこれがあると便利かも)
-    $('.process-input').on('change', function(){
+    $('.originProcessComplete_argument').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         const originBean = $('#bean-input').val();
