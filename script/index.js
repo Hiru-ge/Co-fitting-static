@@ -5,7 +5,7 @@ $(document).ready(function() {
         // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
     $('#pour-times-input').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
-        const currentPourTimes = $('.process-input').children().length;
+        const currentPourTimes = $('.origin-process').children().length;
 
         if (pourTimes > currentPourTimes) {
             for (let i = currentPourTimes; i < pourTimes; i++) {                
@@ -16,7 +16,7 @@ $(document).ready(function() {
                         <input type="text" class="pour-ml wide-input" maxlength="3" onkeyup="nextField(this)"> ml
                     </div>
                 `;
-                $('.process-input').append(processInput);
+                $('.origin-process').append(processInput);
             }
         } else if (pourTimes < currentPourTimes) {
             for (let i = currentPourTimes; i > pourTimes && i > 1; i--) { // i>1 : 1投目は消さない
@@ -44,7 +44,7 @@ $(document).ready(function() {
     }
 
     // 元レシピの比率計算(変換後レシピと元レシピの比率を揃える用にこれがあると便利かも)
-    $('.originProcessComplete_argument').on('change', function(){
+    $('.origin-process').on('change', function(){
         const pourTimes = $('#pour-times-input').val();
         const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         const originBean = $('#bean-input').val();
