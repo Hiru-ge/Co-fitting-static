@@ -99,25 +99,7 @@ $(document).ready(function() {
         }
     }
 
-    // レシピの変換･変換後レシピの出力
-    $('.convert-button').on('click', function(){
-        event.preventDefault(); // ページ遷移を防ぐ
-
-        // 変換前レシピの入力内容を取得
-        const pourTimes = $('#pour-times-input').val();
-        const targetBean_g = $('#bean-target').val();
-        const targetWaterTotal_ml = $('#water-target').val();
-        const originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        const convert_rate = targetWaterTotal_ml / originWaterTotal_ml;
-
-        // エラー検知関数に処理を投げる
-        inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
-
-        // 変換後の豆量と総湯量を転記
-        $('.bean-output').text(targetBean_g);
-        $('.water-output').text(targetWaterTotal_ml);
-
-        // 変換後のレシピを算出・出力
+    function recipeConverter(pourTimes, convert_rate) {
         const defaultProcessOutput = `
             <tr>
                 <th>経過時間</th>
@@ -150,10 +132,31 @@ $(document).ready(function() {
                 </tr>
             `;
         }
-        // Tips:未入力時に変換ボタンを押したとき、表見出しが出力されるのが嫌だったのでデフォルト文と比較して出力するかどうかを判定
-        if (processOutput !== defaultProcessOutput){
-            $('.recipe-output').html(processOutput);
-        }
+        return processOutput;
+    }
+
+    // レシピの変換･変換後レシピの出力
+    $('.convert-button').on('click', function(){
+        event.preventDefault(); // ページ遷移を防ぐ
+
+        // 変換前レシピの入力内容を取得
+        const pourTimes = $('#pour-times-input').val();
+        const targetBean_g = $('#bean-target').val();
+        const targetWaterTotal_ml = $('#water-target').val();
+        const originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        const convert_rate = targetWaterTotal_ml / originWaterTotal_ml;
+
+        // エラー検知関数に処理を投げる
+        inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
+
+        // 変換後の豆量と総湯量を転記
+        $('.bean-output').text(targetBean_g);
+        $('.water-output').text(targetWaterTotal_ml);
+
+        // 変換後のレシピを算出・出力
+        const ConvertedRecipe = recipeConverter(pourTimes, convert_rate);
+        console.log(ConvertedRecipe);
+        $('.recipe-output').html(ConvertedRecipe);
 
     });
 
