@@ -4,11 +4,11 @@ $(document).ready(function() {
         // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
         // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
     $('#pour-times-input').on('change', function(){
-        const InputPourTimes = $('#pour-times-input').val();
+        const inputPourTimes = $('#pour-times-input').val();
         const currentPourTimes = $('.origin-process').children().length;
 
-        if (InputPourTimes > currentPourTimes) {
-            for (let i = currentPourTimes; i < InputPourTimes; i++) {                
+        if (inputPourTimes > currentPourTimes) {
+            for (let i = currentPourTimes; i < inputPourTimes; i++) {                
                 let processInput = `
                     <div class="pour-step${i + 1}">
                         <label>${i + 1}投目</label>
@@ -18,8 +18,8 @@ $(document).ready(function() {
                 `;
                 $('.origin-process').append(processInput);
             }
-        } else if (InputPourTimes < currentPourTimes) {
-            for (let i = currentPourTimes; i > InputPourTimes && i > 1; i--) { // i>1 : 1投目は消さない
+        } else if (inputPourTimes < currentPourTimes) {
+            for (let i = currentPourTimes; i > inputPourTimes && i > 1; i--) { // i>1 : 1投目は消さない
                 $(`.pour-step${i}`).remove();
             }
         }
