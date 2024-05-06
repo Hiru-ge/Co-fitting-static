@@ -105,17 +105,17 @@ $(document).ready(function() {
 
         // 変換前レシピの入力内容を取得
         const pourTimes = $('#pour-times-input').val();
-        const targetBean = $('#bean-target').val();
-        const targetWater = $('#water-target').val();
-        const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        const convert_rate = targetWater / originSumWater;
+        const targetBean_g = $('#bean-target').val();
+        const targetWaterTotal_ml = $('#water-target').val();
+        const originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        const convert_rate = targetWaterTotal_ml / originWaterTotal_ml;
 
         // エラー検知関数に処理を投げる
-        inputError_Detector(pourTimes,originSumWater, targetBean, targetWater);
+        inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
 
         // 変換後の豆量と総湯量を転記
-        $('.bean-output').text(targetBean);
-        $('.water-output').text(targetWater);
+        $('.bean-output').text(targetBean_g);
+        $('.water-output').text(targetWaterTotal_ml);
 
         // 変換後のレシピを算出・出力
         const defaultProcessOutput = `
