@@ -155,7 +155,6 @@ $(document).ready(function() {
 
         // 変換後のレシピを算出・出力
         const ConvertedRecipe = recipeConverter(pourTimes, convert_rate);
-        console.log(ConvertedRecipe);
         $('.recipe-output').html(ConvertedRecipe);
 
     });
