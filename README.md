@@ -38,7 +38,7 @@
 
 ですが、この溶け出す順番には経験則的にいわれているある程度の大まかな流れがあります。それは、 **「香り→酸味→甘み→苦味→雑味」** の順に溶け出すという流れです。下図のように、溶け出しやすさのピークがこの順番に来るというイメージですね。
 <div align="center">
-  <img src="images/extraction-graph.png" width="80%">
+  <img src="images/how-to-description/extraction-graph.png" width="80%">
 </div>
 
 さて、本ツールを理解する上で重要なのは、 **「どの味をどれだけ抽出するか」** という点です。
