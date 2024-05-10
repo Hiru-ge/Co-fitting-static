@@ -66,6 +66,9 @@
    - 変換する前のレシピの情報を入力します。
    - 投数、豆の量、そして各投入段階の経過時間と注湯量を記入します。
    - ※ 投数を入力すると、その分だけレシピ入力欄が生成されます。
+
+   <img src="images/how-to-description/originRecipeForm.png" width="45%">
+
 2. **変換目標入力欄**
    - 変換後のレシピの情報を入力します。
    - 目標とする豆の量、総湯量、そして豆と湯の比率を指定します。
@@ -75,8 +78,13 @@
    - 蒸らし固定は基本的にONをオススメします。経験則ですが、蒸らし湯量の変化が味に与える影響は大きいものと見られます。(大幅な最終量変化がある場合は固定OFFでも良いかも知れません)
 3. **変換ボタン**
    - 入力が完了したら、変換ボタンをクリックしてレシピを変換します。
+
+   <img src="images/how-to-description/targetParameterForm.png" width="45%">
+
 4. **変換後レシピの出力**
    - 変換されたレシピが表形式で表示されます。
+
+   <img src="images/how-to-description/convertedRecipe.png" width="45%">
 
 </details>
 
