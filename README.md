@@ -84,6 +84,12 @@
 
    <img src="images/how-to-description/convertedRecipe.png" width="60%">
 
+4. **ストップウォッチ機能**
+   - 抽出時の経過時間を計測する機能です。
+   - スタートボタンを押すと計測が始まり、ストップボタンを押すと計測が終了します。
+
+   <img src="images/how-to-description/stopWatch.png" width="60%">
+
 </details>
 
 ## 既知の問題
