@@ -55,7 +55,7 @@ $(document).ready(function() {
 
 
     // 変換目標入力欄の入力補助(豆量･総湯量･比率のどれか2つを入力すると、残り1つを計算して補完する)
-    // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので、新規入力の方を優先して上書きできるようにしたい
+    // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので新規入力の方を優先して上書きできるようにしたい
     $('.targetProcessComplete_argument').on('change', function(){
         let targetBean = $('#bean-target').val();
         let targetWater = $('#water-target').val();
@@ -99,7 +99,7 @@ $(document).ready(function() {
         }
     }
 
-    function recipeConverter(pourTimes, convert_rate) {
+    function recipeConverter(pourTimes, convertRate) {
         const defaultProcessOutput = `
             <tr>
                 <th>経過時間</th>
@@ -116,18 +116,18 @@ $(document).ready(function() {
             let input_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
             // ひとつ前の総湯量を記録しておくバッファ(各投での注湯量を計算するために必要)
             let totalWater_ml_buf = Math.trunc(totalWater_ml); 
-            totalWater_ml = Math.trunc(input_pour_ml * convert_rate);
+            totalWater_ml = Math.trunc(input_pour_ml * convertRate);
             // 蒸らし固定ONの場合、1投目の総湯量は固定(元レシピの1投目の総湯量と同じ)
             if (i === 1 && $('#steep-check').prop('checked')) {
                 totalWater_ml = $(`.pour-step1`).children('.pour-ml').val();
             }
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
-            let convert_pour_ml = Math.trunc(totalWater_ml - totalWater_ml_buf);
+            let convertedPour_ml = Math.trunc(totalWater_ml - totalWater_ml_buf);
             processOutput += `
                 <tr class="output-recipe-step${i}">
                     <td>${minutes}:${seconds}</td>
-                    <td>${convert_pour_ml} ml</td>
+                    <td>${convertedPour_ml} ml</td>
                     <td>${totalWater_ml} ml</td>
                 </tr>
             `;
@@ -144,7 +144,7 @@ $(document).ready(function() {
         const targetBean_g = $('#bean-target').val();
         const targetWaterTotal_ml = $('#water-target').val();
         const originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        const convert_rate = targetWaterTotal_ml / originWaterTotal_ml;
+        const convertRate = targetWaterTotal_ml / originWaterTotal_ml;
 
         // エラー検知関数に処理を投げる
         inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
@@ -154,8 +154,8 @@ $(document).ready(function() {
         $('.water-output').text(targetWaterTotal_ml);
 
         // 変換後のレシピを算出・出力
-        const ConvertedRecipe = recipeConverter(pourTimes, convert_rate);
-        $('.recipe-output').html(ConvertedRecipe);
+        const convertedRecipe = recipeConverter(pourTimes, convertRate);
+        $('.recipe-output').html(convertedRecipe);
 
     });
 
