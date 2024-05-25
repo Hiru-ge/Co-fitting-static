@@ -8,21 +8,23 @@
   <img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic">
   <img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic">
   <img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic">
+  <img src="https://img.shields.io/badge/-Jquery-0769AD.svg?logo=jquery&style=plastic">
 </p>
 
 ## 目次
 
 1. [作成の経緯](#作成の経緯)
-2. [背景知識](#背景知識)
+2. [基本原理と背景知識](#基本原理と背景知識)
 3. [使用方法](#使用方法)
 4. [既知の問題](#既知の問題)
 5. [今後実装しようとしている機能](#今後実装しようとしている機能)
+6. [不具合等](#不具合等)
 
 ## 作成の経緯
 
 「美味しいいれ方はあるんだけど、200mlじゃなくて300ml作りたいんだよな...」ということがしばしばあり、手軽に量の変換ができるツールがあれば便利だと思ったので作りました。
 
-## 背景知識
+## 基本原理と背景知識
 
 この変換器が行っている変換処理の根幹は、「変換前と変換後の最終量から倍率を求め、各注湯プロセスに倍率をかける」という単純な比率変換です。
 
@@ -108,3 +110,7 @@
 
 - 氷量の変換
   - アイスコーヒーのレシピにも対応できるよう、氷量の変換機能を実装しようと考えています
+
+## 不具合等
+
+バグ修正等はGitHubのissueまで連絡ください。
