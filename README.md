@@ -113,4 +113,4 @@
 
 ## 不具合等
 
-バグ修正等はGitHubのissueまで連絡ください。
+バグ修正等は(GitHubのissue) [https://github.com/Hiruge-1/Coffee-fitting/issues]まで連絡ください。
