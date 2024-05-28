@@ -140,11 +140,11 @@ $(document).ready(function() {
         event.preventDefault(); // ページ遷移を防ぐ
 
         // 変換前レシピの入力内容を取得
-        const pourTimes = $('#pour-times-input').val();
-        const targetBean_g = $('#bean-target').val();
-        const targetWaterTotal_ml = $('#water-target').val();
-        const originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        const convertRate = targetWaterTotal_ml / originWaterTotal_ml;
+        let pourTimes = $('#pour-times-input').val();
+        let targetBean_g = $('#bean-target').val();
+        let targetWaterTotal_ml = $('#water-target').val();
+        let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        let convertRate = targetWaterTotal_ml / originWaterTotal_ml;
 
         // エラー検知関数に処理を投げる
         inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
