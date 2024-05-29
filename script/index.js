@@ -154,7 +154,8 @@ $(document).ready(function() {
         }
 
         // エラー検知関数に処理を投げる
-        inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
+        // fixme:エラー検知を倍率変換入力に対応させる
+        // inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(targetBean_g);
