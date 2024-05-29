@@ -146,14 +146,16 @@ $(document).ready(function() {
         let targetBean_g, targetWaterTotal_ml, convertRate;
         if($('#magnification').val() !== ''){ // 変換率が手動入力されている場合は、それを採用して変換する
             convertRate = $('#magnification').val();
-            let dummy = -1; // エラー検知関数が検知する必要がない項目にはダミー値を入れておく
-            inputError_Detector([pourTimes, originWaterTotal_ml, /*targetBean_g =*/dummy, /*targetWaterTotal_ml =*/dummy])
+            targetBean_g = $('#bean-input').val()*convertRate;
+            targetWaterTotal_ml = originWaterTotal_ml*convertRate;
         }else{        
             targetBean_g = $('#bean-target').val();
             targetWaterTotal_ml = $('#water-target').val();
             convertRate = targetWaterTotal_ml / originWaterTotal_ml;
-            inputError_Detector([pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml])
         }
+
+        // 入力エラー検知関数に処理を投げて、エラーがあればアラートを出す
+        inputError_Detector([pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml])
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(targetBean_g);
