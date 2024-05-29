@@ -78,7 +78,7 @@ $(document).ready(function() {
     });
 
 
-    function inputError_Detector(pourTimes,originSumWater, targetBean, targetWater) {
+    function inputError_Detector([pourTimes, originSumWater, targetBean, targetWater]) {
         let defaultMessage = '【入力不備】\n'; // エラーメッセージの初期値(エラーが検知されるとこれに追加されていく)
         let errorMassage = defaultMessage;
         if (!pourTimes){
@@ -141,21 +141,19 @@ $(document).ready(function() {
 
         // 変換前レシピの入力内容を取得
         let pourTimes = $('#pour-times-input').val();
-        let targetBean_g = $('#bean-target').val();
-        let targetWaterTotal_ml = $('#water-target').val();
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        let convertRate;        
-        if($('#magnification').val){ // 変換率が手動入力されている場合は、それを採用して変換する
-            convertRate = $('#magnification').val;
+
+        let targetBean_g, targetWaterTotal_ml, convertRate;
+        if($('#magnification').val() !== ''){ // 変換率が手動入力されている場合は、それを採用して変換する
+            convertRate = $('#magnification').val();
+            let dummy = -1; // エラー検知関数が検知する必要がない項目にはダミー値を入れておく
+            inputError_Detector([pourTimes, originWaterTotal_ml, /*targetBean_g =*/dummy, /*targetWaterTotal_ml =*/dummy])
         }else{        
             targetBean_g = $('#bean-target').val();
             targetWaterTotal_ml = $('#water-target').val();
-            convertRate = targetWaterTotal_ml / originWaterTotal_ml;  
+            convertRate = targetWaterTotal_ml / originWaterTotal_ml;
+            inputError_Detector([pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml])
         }
-
-        // エラー検知関数に処理を投げる
-        // fixme:エラー検知を倍率変換入力に対応させる
-        // inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(targetBean_g);
