@@ -144,7 +144,14 @@ $(document).ready(function() {
         let targetBean_g = $('#bean-target').val();
         let targetWaterTotal_ml = $('#water-target').val();
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        let convertRate = targetWaterTotal_ml / originWaterTotal_ml;
+        let convertRate;        
+        if($('#magnification').val){ // 変換率が手動入力されている場合は、それを採用して変換する
+            convertRate = $('#magnification').val;
+        }else{        
+            targetBean_g = $('#bean-target').val();
+            targetWaterTotal_ml = $('#water-target').val();
+            convertRate = targetWaterTotal_ml / originWaterTotal_ml;  
+        }
 
         // エラー検知関数に処理を投げる
         inputError_Detector(pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml);
