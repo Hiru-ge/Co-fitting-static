@@ -97,13 +97,25 @@ input[type="text"].wide-input {
 }
 
 /*ボタン部分*/
-.convert-button-parent {
+.convert-buttons {
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .convert-button {
     display: inline;
     background-color: #c1994d;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+}
+
+.clear-button {
+    display: inline;
+    background-color: #2b55d4;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
