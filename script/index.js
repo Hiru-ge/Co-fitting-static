@@ -77,6 +77,13 @@ $(document).ready(function() {
         }
     });
 
+    // 変換目標入力欄のクリア
+    $('.clear-button').on('click', function(){
+        $('#bean-target').val('');
+        $('#water-target').val('');
+        $('#ratio-target').val('');
+    });
+
 
     function inputError_Detector([pourTimes, originSumWater, targetBean, targetWater]) {
         let defaultMessage = '【入力不備】\n'; // エラーメッセージの初期値(エラーが検知されるとこれに追加されていく)
