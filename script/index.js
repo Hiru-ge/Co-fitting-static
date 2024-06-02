@@ -4,11 +4,11 @@ $(document).ready(function() {
         // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
         // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
     $('#pour-times-input').on('change', function(){
-        const inputPourTimes = $('#pour-times-input').val();
-        const currentPourTimes = $('.origin-process').children().length;
+        const InputPourTimes = $('#pour-times-input').val();
+        const CurrentPourTimes = $('.origin-process').children().length;
 
-        if (inputPourTimes > currentPourTimes) {
-            for (let i = currentPourTimes; i < inputPourTimes; i++) {                
+        if (InputPourTimes > CurrentPourTimes) {
+            for (let i = CurrentPourTimes; i < InputPourTimes; i++) {                
                 let processInput = `
                     <div class="pour-step${i + 1}">
                         <label>${i + 1}投目</label>
@@ -18,8 +18,8 @@ $(document).ready(function() {
                 `;
                 $('.origin-process').append(processInput);
             }
-        } else if (inputPourTimes < currentPourTimes) {
-            for (let i = currentPourTimes; i > inputPourTimes && i > 1; i--) { // i>1 : 1投目は消さない
+        } else if (InputPourTimes < CurrentPourTimes) {
+            for (let i = CurrentPourTimes; i > InputPourTimes && i > 1; i--) { // i>1 : 1投目は消さない
                 $(`.pour-step${i}`).remove();
             }
         }
@@ -45,12 +45,12 @@ $(document).ready(function() {
 
     // 元レシピの比率計算(変換後レシピと元レシピの比率を揃える用にこれがあると便利かも)
     $('.origin-process').on('change', function(){
-        const pourTimes = $('#pour-times-input').val();
-        const originSumWater = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        const originBean = $('#bean-input').val();
+        const PourTimes = $('#pour-times-input').val();
+        const OriginSumWater = $(`.pour-step${PourTimes}`).children('.pour-ml').val();
+        const OriginBean = $('#bean-input').val();
         
-        let originRatio = brewParameterCompleter([/* 豆量=*/originBean, /* 総湯量=*/originSumWater, /* 比率=*/'']);
-        $('#origin-ratio').html(originRatio);
+        const OriginRatio = brewParameterCompleter([/*豆量=*/OriginBean, /*総湯量=*/OriginSumWater, /*比率=*/'']);
+        $('#origin-ratio').html(OriginRatio);
     });
 
 
@@ -107,14 +107,14 @@ $(document).ready(function() {
     }
 
     function recipeConverter(pourTimes, convertRate) {
-        const defaultProcessOutput = `
+        const DefaultProcessOutput = `
             <tr>
                 <th>経過時間</th>
                 <th>注湯量</th>
                 <th>総注湯量</th>
             </tr>
         `;
-        let processOutput = defaultProcessOutput;
+        let processOutput = DefaultProcessOutput;
         let totalWater_ml = 0;
         for (let i = 1; i <= pourTimes; i++) {
             // todo:算出とフォーマットが並行して行われてしまっているので、まず算出し、フォーマット用の関数に渡して整形するようにしたい
@@ -169,8 +169,8 @@ $(document).ready(function() {
         $('.water-output').text(targetWaterTotal_ml);
 
         // 変換後のレシピを算出・出力
-        const convertedRecipe = recipeConverter(pourTimes, convertRate);
-        $('.recipe-output').html(convertedRecipe);
+        const ConvertedRecipe = recipeConverter(pourTimes, convertRate);
+        $('.recipe-output').html(ConvertedRecipe);
 
     });
 
@@ -178,10 +178,10 @@ $(document).ready(function() {
 
 
     // ストップウォッチ機能
-    const time = document.getElementById('time');
-    const startButton = document.getElementById('start');
-    const stopButton = document.getElementById('stop');
-    const resetButton = document.getElementById('reset');
+    const Time = document.getElementById('time');
+    const StartButton = document.getElementById('start');
+    const StopButton = document.getElementById('stop');
+    const ResetButton = document.getElementById('reset');
     
     // 開始時間
     let startTime;
@@ -192,38 +192,38 @@ $(document).ready(function() {
     
     // 時間を表示する関数
     function displayTime() {
-      const currentTime = new Date(Date.now() - startTime + stopTime);
-      const m = String(currentTime.getMinutes()).padStart(2, '0');
-      const s = String(currentTime.getSeconds()).padStart(2, '0');
+      const CurrentTime = new Date(Date.now() - startTime + stopTime);
+      const M = String(CurrentTime.getMinutes()).padStart(2, '0');
+      const S = String(CurrentTime.getSeconds()).padStart(2, '0');
     
-      time.textContent = `${m}:${s}`;
+      Time.textContent = `${M}:${S}`;
       timeoutID = setTimeout(displayTime, 10);
     }
     
     // スタートボタンがクリックされたら時間を進める
-    startButton.addEventListener('click', () => {
-      startButton.disabled = true;
-      stopButton.disabled = false;
-      resetButton.disabled = true;
+    StartButton.addEventListener('click', () => {
+      StartButton.disabled = true;
+      StopButton.disabled = false;
+      ResetButton.disabled = true;
       startTime = Date.now();
       displayTime();
     });
     
     // ストップボタンがクリックされたら時間を止める
-    stopButton.addEventListener('click', function() {
-      startButton.disabled = false;
-      stopButton.disabled = true;
-      resetButton.disabled = false;
+    StopButton.addEventListener('click', function() {
+      StartButton.disabled = false;
+      StopButton.disabled = true;
+      ResetButton.disabled = false;
       clearTimeout(timeoutID);
       stopTime += (Date.now() - startTime);
     });
     
     // リセットボタンがクリックされたら時間を0に戻す
-    resetButton.addEventListener('click', function() {
-      startButton.disabled = false;
-      stopButton.disabled = true;
-      resetButton.disabled = true;
-      time.textContent = '00:00';
+    ResetButton.addEventListener('click', function() {
+      StartButton.disabled = false;
+      StopButton.disabled = true;
+      ResetButton.disabled = true;
+      Time.textContent = '00:00';
       stopTime = 0;
     });
 
