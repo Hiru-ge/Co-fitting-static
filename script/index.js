@@ -82,6 +82,7 @@ $(document).ready(function() {
         $('#bean-target').val('');
         $('#water-target').val('');
         $('#ratio-target').val('');
+        event.preventDefault(); // ページ遷移を防ぐ
     });
 
 
