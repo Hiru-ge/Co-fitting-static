@@ -170,7 +170,7 @@ $(document).ready(function() {
         $('.water-output').text(targetWaterTotal_ml);
 
         // 氷量が入力されている場合、変換後の氷量を算出・出力
-        let convertedIce_g = $('#ice-input').val()*convertRate;
+        let convertedIce_g = Math.trunc($('#ice-input').val()*convertRate);
         if(convertedIce_g){
             $('.ice-output').text(convertedIce_g);
         }
