@@ -76,6 +76,9 @@
                 <div>
                     <p>変換前の豆と湯の比率: 1:<span id="origin-ratio"></span></p>
                 </div>
+                <div>
+                    <label for="ice-input">変換前レシピの氷量(g): </label><input type="text" id="ice-input" maxlength="3" onkeyup="nextField(this)"> g
+                </div>
                 <!--変換前レシピの入力欄(pour-times-inputの投数分だけフォームを生成)-->
                 <h4>変換前レシピ</h4>
                     <p>投数 経過時間 総注湯量</p>
@@ -139,6 +142,7 @@
             <h3>変換後レシピ</h3>
             <p>変換後の豆量(g):<span class="bean-output"></span> g</p>
             <p>変換後の総湯量(ml):<span class="water-output wide-input"></span> ml</p>
+            <p>変換後の氷量(g):<span class="ice-output wide-input"></span> g</p>
             <table class="recipe-output">
             </table>
         </div> <!-- /item:変換後レシピの出力欄 -->
