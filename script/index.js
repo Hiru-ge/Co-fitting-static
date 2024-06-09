@@ -1,9 +1,12 @@
 'use strict';
 $(document).ready(function() {
-    // アイスモードの切り替え
-    $('.ice-mode-button').on('click', function(){
-        event.preventDefault(); // ページ遷移を防ぐ
-        $('.ice-mode-show').toggle();
+    // アイスモードの切り替え(チェックボックスのON/OFFで表示を切り替える)
+    $('#ice-check').on('change', function(){
+        if($(this).prop('checked')){
+            $('.ice-mode-show').show();
+        }else{
+            $('.ice-mode-show').hide();
+        }
     });
 
     // 変換前レシピ入力欄の出力
