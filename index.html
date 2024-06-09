@@ -57,6 +57,10 @@
         <a href="how-to-use.html" target="_blank">変換器の使い方(別タブで開きます)</a>
     </div>
 
+    <div>
+        <button class="ice-mode-button">アイスモード</button>
+    </div>
+
     <!-- コンテンツはFlexBoxでレイアウト指定する -->
     <div class="container">
         <!-- todo:プリセットレシピの呼び出し機能を追加 -->
@@ -77,7 +81,7 @@
                 <div>
                     <p>変換前の豆と湯の比率: 1:<span id="origin-ratio"></span></p>
                 </div>
-                <div>
+                <div class="ice-mode-show">
                     <label for="ice-input">変換前レシピの氷量(g): </label>
                     <input type="text" id="ice-input" maxlength="3" onkeyup="nextField(this)"> g
                 </div>
@@ -144,7 +148,7 @@
             <h3>変換後レシピ</h3>
             <p>変換後の豆量(g):<span class="bean-output"></span> g</p>
             <p>変換後の総湯量(ml):<span class="water-output wide-input"></span> ml</p>
-            <p>変換後の氷量(g):<span class="ice-output wide-input"></span> g</p>
+            <p class="ice-mode-show">変換後の氷量(g):<span class="ice-output wide-input"></span> g</p>
             <table class="recipe-output">
             </table>
         </div> <!-- /item:変換後レシピの出力欄 -->
