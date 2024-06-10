@@ -130,8 +130,8 @@ input[type="text"].wide-input {
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem;
-    width: 20vw;
-    margin: 0 40vw 0 40vw;
+    width: 30vw;
+    margin: 0 35vw 0 35vw;
     cursor: pointer;
 }
 
