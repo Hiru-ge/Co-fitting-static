@@ -1,5 +1,14 @@
 'use strict';
 $(document).ready(function() {
+    // アイスモードの切り替え(チェックボックスのON/OFFで表示を切り替える)
+    $('#ice-check').on('change', function(){
+        if($(this).prop('checked')){
+            $('.ice-mode-show').show();
+        }else{
+            $('.ice-mode-show').hide();
+        }
+    });
+
     // 変換前レシピ入力欄の出力
         // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
         // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
@@ -104,6 +113,7 @@ $(document).ready(function() {
 
         if(errorMassage !== defaultMessage){
             window.alert(errorMassage);
+            return 'Error';
         }
     }
 
@@ -162,8 +172,10 @@ $(document).ready(function() {
             convertRate = targetWaterTotal_ml / originWaterTotal_ml;
         }
 
-        // 入力エラー検知関数に処理を投げて、エラーがあればアラートを出す
-        inputError_Detector([pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml])
+        // 入力エラー検知関数に処理を投げて、エラーがあればアラートを出して処理を中断
+        if(inputError_Detector([pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml])=='Error'){
+            return;
+        }
 
         // 変換後の豆量と総湯量を転記
         $('.bean-output').text(targetBean_g);
