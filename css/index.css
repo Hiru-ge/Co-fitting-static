@@ -122,3 +122,20 @@ input[type="text"].wide-input {
     padding: 0.5rem 2rem;
     cursor: pointer;
 }
+
+.ice-check-div {
+    background-color: #65ded2ef;
+    text-align: center;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 30vw;
+    margin: 0 35vw 0 35vw;
+    cursor: pointer;
+}
+
+/* 氷量出力欄の表示・非表示切り換え */
+.ice-mode-show {
+    display: none;  /* 初期状態は非表示 */
+}
