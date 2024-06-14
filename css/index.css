@@ -122,7 +122,7 @@ input[type="text"].wide-input {
     color: #fff;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 1rem;
     width: 25rem;
     cursor: pointer;
 }
