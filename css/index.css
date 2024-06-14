@@ -19,19 +19,8 @@ div.introduce {
     text-align: center;
 }
 
-.origin-recipe-div {
-    background-color: #b9d0b1;
-}
-
-.target-recipe-div {
-    background-color: #b0941e;
-}
-
-.output-recipe-div {
-    background-color: #e1c0bd;
-}
-
 .item {
+    background-color: #c1994d;
     margin: 0.5rem 1rem;
     padding: 1rem;
     width: 28rem;
@@ -40,7 +29,7 @@ div.introduce {
 
 /*ストップウォッチ部分*/
 .timer-div {
-    background-color: #bdc6b7;
+    background-color: #949b90;
 }
 
 #time {
@@ -105,7 +94,7 @@ input[type="text"].wide-input {
 
 .convert-button {
     display: inline;
-    background-color: #c1994d;
+    background-color: #5c4824;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -115,7 +104,7 @@ input[type="text"].wide-input {
 
 .clear-button {
     display: inline;
-    background-color: #2b55d4;
+    background-color: #2243a7;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -124,7 +113,7 @@ input[type="text"].wide-input {
 }
 
 .ice-check-div {
-    background-color: #65ded2ef;
+    background-color: #004a8b;
     text-align: center;
     color: #fff;
     border: none;
