@@ -11,6 +11,10 @@
     display: flex;
 }
 
+.ice-check-container {
+    display: flex;
+    justify-content: center;
+}
 
 /*装飾･見栄えに関する部分*/
 div.introduce {
@@ -112,15 +116,14 @@ input[type="text"].wide-input {
     cursor: pointer;
 }
 
-.ice-check-div {
+.ice-check-item {
     background-color: #004a8b;
     text-align: center;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem;
-    width: 30vw;
-    margin: 0 35vw 0 35vw;
+    width: 25rem;
     cursor: pointer;
 }
 
