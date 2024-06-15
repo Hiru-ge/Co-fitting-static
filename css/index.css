@@ -33,7 +33,8 @@ div.introduce {
 
 /*ストップウォッチ部分*/
 .timer-div {
-    background-color: #949b90;
+    background-color: #474747;
+    color: #fff;
 }
 
 #time {
@@ -42,6 +43,7 @@ div.introduce {
 }
 
 .timer-button {
+    color: #fff;
     font-size: 1.125rem;
     border-radius: 0.5rem;
     margin: 0.5rem;
@@ -98,7 +100,7 @@ input[type="text"].wide-input {
 
 .convert-button {
     display: inline;
-    background-color: #5c4824;
+    background-color: #474747;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -108,7 +110,7 @@ input[type="text"].wide-input {
 
 .clear-button {
     display: inline;
-    background-color: #2243a7;
+    background-color: #474747;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -117,7 +119,7 @@ input[type="text"].wide-input {
 }
 
 .ice-check-item {
-    background-color: #004a8b;
+    background-color: #52708a;
     text-align: center;
     color: #fff;
     border: none;

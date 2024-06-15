@@ -2,9 +2,16 @@
 $(document).ready(function() {
     // アイスモードの切り替え(チェックボックスのON/OFFで表示を切り替える)
     $('#ice-check').on('change', function(){
+        // 当初は.show()と.hide()で表示を切り替えていたが、フォームの自動フォーカスが効かなくなるため、html()で中身を書き換えることにした
+        let iceInputDivText= `
+            <label for="ice-input">変換前レシピの氷量(g): </label>
+            <input type="text" id="ice-input" maxlength="3" onkeyup="nextField(this)"> g
+        `;
         if($(this).prop('checked')){
+            $('.ice-input-div').html(iceInputDivText);
             $('.ice-mode-show').show();
         }else{
+            $('.ice-input-div').html('');
             $('.ice-mode-show').hide();
         }
     });
