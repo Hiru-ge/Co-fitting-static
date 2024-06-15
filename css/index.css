@@ -24,11 +24,23 @@ div.introduce {
 }
 
 .item {
-    background-color: #c1994d;
+    background-color: #b9d0b1;
     margin: 0.5rem 1rem;
     padding: 1rem;
     width: 28rem;
     border-radius: 1rem;
+}
+
+.origin-recipe-div {
+    background-color: #b9d0b1;
+}
+
+.target-recipe-div {
+    background-color: #b29937;
+}
+
+.output-recipe-div {
+    background-color: #e1c0bd;
 }
 
 /*ストップウォッチ部分*/
