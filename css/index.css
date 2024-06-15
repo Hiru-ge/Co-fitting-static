@@ -11,6 +11,10 @@
     display: flex;
 }
 
+.ice-check-container {
+    display: flex;
+    justify-content: center;
+}
 
 /*装飾･見栄えに関する部分*/
 div.introduce {
@@ -19,19 +23,8 @@ div.introduce {
     text-align: center;
 }
 
-.origin-recipe-div {
-    background-color: #b9d0b1;
-}
-
-.target-recipe-div {
-    background-color: #b0941e;
-}
-
-.output-recipe-div {
-    background-color: #e1c0bd;
-}
-
 .item {
+    background-color: #c4a770;
     margin: 0.5rem 1rem;
     padding: 1rem;
     width: 28rem;
@@ -40,7 +33,8 @@ div.introduce {
 
 /*ストップウォッチ部分*/
 .timer-div {
-    background-color: #bdc6b7;
+    background-color: #474747;
+    color: #fff;
 }
 
 #time {
@@ -49,6 +43,7 @@ div.introduce {
 }
 
 .timer-button {
+    color: #fff;
     font-size: 1.125rem;
     border-radius: 0.5rem;
     margin: 0.5rem;
@@ -105,7 +100,7 @@ input[type="text"].wide-input {
 
 .convert-button {
     display: inline;
-    background-color: #c1994d;
+    background-color: #474747;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -115,10 +110,27 @@ input[type="text"].wide-input {
 
 .clear-button {
     display: inline;
-    background-color: #2b55d4;
+    background-color: #474747;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
     cursor: pointer;
+}
+
+.ice-check-item {
+    background-color: #52708a;
+    text-align: center;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin: 0rem 1rem;
+    width: 25rem;
+    cursor: pointer;
+}
+
+/* 氷量出力欄の表示・非表示切り換え */
+.ice-mode-show {
+    display: none;  /* 初期状態は非表示 */
 }
