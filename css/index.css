@@ -94,16 +94,7 @@ input[type="text"].wide-input {
     justify-content: space-around;
 }
 
-.convert-button {
-    display: inline;
-    background-color: #d0d0d0;
-    color: #000;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 2rem;
-    cursor: pointer;
-}
-
+.convert-button,
 .clear-button {
     display: inline;
     background-color: #d0d0d0;
@@ -114,6 +105,7 @@ input[type="text"].wide-input {
     cursor: pointer;
 }
 
+/* チェックボックス部分 */
 .ice-check-item {
     background-color: #474747;
     text-align: center;
