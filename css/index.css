@@ -91,6 +91,7 @@ input[type="text"].wide-input {
 
 /*ボタン部分*/
 .convert-buttons {
+    font-family: "M PLUS Rounded 1c", sans-serif;
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -109,6 +110,7 @@ input[type="text"].wide-input {
 
 /* チェックボックス部分 */
 .ice-check-item {
+    font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 700;
     background-color: #474747;
     text-align: center;
