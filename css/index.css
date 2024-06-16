@@ -92,6 +92,7 @@ input[type="text"].wide-input {
 /*ボタン部分*/
 .convert-buttons {
     font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
     text-align: center;
     display: flex;
     justify-content: space-around;
