@@ -30,7 +30,7 @@ h4 {
 }
 
 /* フォント指定 */
-header, footer, h1, h2, h3, h4 {
+header, footer, h1, h2, h3, h4, div.timer-div {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 700;
     font-style: normal;
