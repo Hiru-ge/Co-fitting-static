@@ -101,7 +101,7 @@ input[type="text"].wide-input {
 .convert-button,
 .clear-button {
     display: inline;
-    background-color: #d0d0d0;
+    background-color: #ffffff;
     color: #000;
     border: none;
     border-radius: 0.5rem;
