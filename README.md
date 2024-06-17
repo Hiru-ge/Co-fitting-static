@@ -66,17 +66,17 @@
 
 1. **変換前レシピ入力欄**：変換する前のレシピの情報を入力します。
 
-   <img src="images/how-to-description/originRecipeForm.png" width="60%">
+   <img src="images/how-to-description/originRecipeForm.png" width="40%">
 
    投数、豆の量、そして各投入段階の経過時間と注湯量を記入します。<br>
       ※ 投数を入力すると、その分だけレシピ入力欄が生成されます。<br>
    アイスコーヒーを入れたい場合は、アイスモードをONにし、氷量を入力します。
 
-   <img src="images/how-to-description/originRecipeForm[ice-mode].png" width="60%">
+   <img src="images/how-to-description/originRecipeForm[ice-mode].png" width="40%">
 
 2. **変換目標入力欄**：変換後のレシピの情報を入力します。
 
-   <img src="images/how-to-description/targetParameterForm[bean,water].png" width="60%">
+   <img src="images/how-to-description/targetParameterForm[bean,water].png" width="40%">
 
    目標とする豆の量、総湯量、そして豆と湯の比率を指定します。
 
@@ -84,7 +84,7 @@
 
      変換目標の入力が手間かと思い、倍率を入力するだけで変換できる機能を実装しました
 
-      <img src="images/how-to-description/targetParameterForm[convertRate].png" width="60%">
+      <img src="images/how-to-description/targetParameterForm[convertRate].png" width="40%">
 
    **入力補助**
 
@@ -100,11 +100,11 @@
 
 3. **変換後レシピの出力**：変換されたレシピが表形式で表示されます。
 
-   <img src="images/how-to-description/convertedRecipe.png" width="60%">   
+   <img src="images/how-to-description/convertedRecipe.png" width="40%">   
 
 4. **ストップウォッチ機能**：抽出時の経過時間を計測する機能です。
 
-   <img src="images/how-to-description/stopWatch.png" width="60%">
+   <img src="images/how-to-description/stopWatch.png" width="40%">
 
    スタートボタンを押すと計測が始まり、ストップボタンを押すと計測が終了します。
 
