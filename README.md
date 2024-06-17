@@ -66,6 +66,9 @@
 [使い方ページ](http://hiruge-tools.com/how-to-use.html)にも同様の以下の説明と同様の内容が書いてあります。
 
 1. **変換前レシピ入力欄**
+
+   <img src="images/how-to-description/originRecipeForm.png" width="60%">
+
    - 変換する前のレシピの情報を入力します。
    - 投数、豆の量、そして各投入段階の経過時間と注湯量を記入します。
    - ※ 投数を入力すると、その分だけレシピ入力欄が生成されます。
@@ -74,10 +77,14 @@
    <img src="images/how-to-description/originRecipeForm.png" width="60%">
 
 2. **変換目標入力欄**
+
+   <img src="images/how-to-description/targetParameterForm[bean,water].png" width="60%">
+
    - 変換後のレシピの情報を入力します。
    - 目標とする豆の量、総湯量、そして豆と湯の比率を指定します。
    - 倍率変換
      - 変換目標の入力が手間かと思い、倍率を入力するだけで変換できる機能を実装しました
+      <img src="images/how-to-description/targetParameterForm[convertRate].png" width="60%">
    - 入力補助
      - 豆量と総湯量の両方が入力されると自動的に比率が計算・入力されます。
      - また、豆量あるいは総湯量のいずれかが入力された状態で比率が入力されると、もう一方が更新されます。
@@ -85,18 +92,18 @@
         - 入力補助機能がある都合上、豆量・総湯量・比率が全て入力されていると目標値の変更が難しくなる問題を確認したため実装しました。
    - 蒸らし固定は基本的にONをオススメします。経験則ですが、蒸らし湯量の変化が味に与える影響は大きいものと見られます。(大幅な最終量変化がある場合は固定OFFでも良いかも知れません)
 
-   <img src="images/how-to-description/targetParameterForm.png" width="60%">
-
 3. **変換後レシピの出力**
-   - 変換されたレシピが表形式で表示されます。
 
    <img src="images/how-to-description/convertedRecipe.png" width="60%">
 
+   - 変換されたレシピが表形式で表示されます。
+
 4. **ストップウォッチ機能**
-   - 抽出時の経過時間を計測する機能です。
-   - スタートボタンを押すと計測が始まり、ストップボタンを押すと計測が終了します。
 
    <img src="images/how-to-description/stopWatch.png" width="60%">
+
+   - 抽出時の経過時間を計測する機能です。
+   - スタートボタンを押すと計測が始まり、ストップボタンを押すと計測が終了します。
 
 </details>
 
