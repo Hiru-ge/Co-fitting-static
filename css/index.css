@@ -128,3 +128,12 @@ input[type="text"].wide-input {
 .ice-mode-show {
     display: none;  /* 初期状態は非表示 */
 }
+
+/* アイスモード時の見た目変更 */
+html.ice-mode {
+    background-color: #a2a9af;
+}
+
+header.ice-mode, footer.ice-mode {
+    background-color: #396fa8;
+}

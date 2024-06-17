@@ -10,9 +10,17 @@ $(document).ready(function() {
         if($(this).prop('checked')){
             $('.ice-input-div').html(iceInputDivText);
             $('.ice-mode-show').show();
+            // <html>,<header>,<footer>にice-modeクラスを追加して、CSSでスタイルを変更する
+            $('html').addClass('ice-mode');
+            $('header').addClass('ice-mode');
+            $('footer').addClass('ice-mode');
         }else{
             $('.ice-input-div').html('');
             $('.ice-mode-show').hide();
+            // <html>,<header>,<footer>からice-modeクラスを削除して、CSSでスタイルを変更する
+            $('html').removeClass('ice-mode');
+            $('header').removeClass('ice-mode');
+            $('footer').removeClass('ice-mode');
         }
     });
 
