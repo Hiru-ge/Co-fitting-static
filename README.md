@@ -57,13 +57,13 @@
 ## 使用方法
 
 本リポジトリのファイルをローカルに引っぱって個々で利用することも可能ですし、ブラウザで使用することもできます
-([http://hiruge-tools.com/Coffee-fitting](http://hiruge-tools.com/Coffee-fitting/))
+([https://hiruge-tools.com](https://hiruge-tools.com))
 
 
 <details>
 <summary>より詳細な変換器の使用方法</summary>
 
-[使い方ページ](http://hiruge-tools.com/how-to-use.html)にも同様の以下の説明と同様の内容が書いてあります。
+[使い方ページ](https://hiruge-tools.com/how-to-use.html)にも同様の以下の説明と同様の内容が書いてあります。
 
 1. **変換前レシピ入力欄**
 
