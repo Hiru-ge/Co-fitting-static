@@ -73,7 +73,6 @@ $(document).ready(function() {
 
 
     // 変換目標入力欄の入力補助(豆量･総湯量･比率のどれか2つを入力すると、残り1つを計算して補完する)
-    // Todo: 比率入力時などに顕著だが、フォームに値が既に入っていると変換がうまくいかない(一旦手動で消さないといけない)ので新規入力の方を優先して上書きできるようにしたい
     $('.targetProcessComplete_argument').on('change', function(){
         let targetBean = $('#bean-target').val();
         let targetWater = $('#water-target').val();
