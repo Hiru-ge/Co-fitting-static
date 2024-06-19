@@ -135,6 +135,7 @@ $(document).ready(function() {
         `;
         let processOutput = DefaultProcessOutput;
         let totalWater_ml = 0;
+        // todo:アイスモード時、氷量も含めた合計量として変換を行えるようにする
         for (let i = 1; i <= pourTimes; i++) {
             // todo:算出とフォーマットが並行して行われてしまっているので、まず算出し、フォーマット用の関数に渡して整形するようにしたい
             let minutes = String($(`.pour-step${i}`).children('.minutes').val()).padStart(2, '0');
