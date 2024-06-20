@@ -29,6 +29,14 @@ li.supplement::before {
     margin-right: 0.5em; /*※の後に空白を入れるためのmargin*/
 }
 
+img {
+    border: 3px solid #000000;
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+}
+
 /*モバイル用のスタイル*/
 @media (max-width: 600px) {
     .container {
