@@ -134,26 +134,26 @@ $(document).ready(function() {
             </tr>
         `;
         let processOutput = DefaultProcessOutput;
-        let totalWaters_ml=[0];
+        let totalWater_mls=[0], minutes=["0"], seconds=["00"], input_pour_mls=[0],convertedPour_mls=[0];
         // todo:アイスモード時、氷量も含めた合計量として変換を行えるようにする
         for (let i = 1; i <= pourTimes; i++) {
             // todo:算出とフォーマットが並行して行われてしまっているので、まず算出し、フォーマット用の関数に渡して整形するようにしたい
-            let minutes = String($(`.pour-step${i}`).children('.minutes').val()).padStart(2, '0');
-            let seconds = String($(`.pour-step${i}`).children('.seconds').val()).padStart(2, '0');
-            let input_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
-            totalWaters_ml.push(Math.trunc(input_pour_ml * convertRate));
+            minutes.push(String($(`.pour-step${i}`).children('.minutes').val()).padStart(2, '0'));
+            seconds.push(String($(`.pour-step${i}`).children('.seconds').val()).padStart(2, '0'));
+            input_pour_mls.push($(`.pour-step${i}`).children('.pour-ml').val());
+            totalWater_mls.push(Math.trunc(input_pour_mls[i] * convertRate));
             // 蒸らし固定ONの場合、1投目の総湯量は固定(元レシピの1投目の総湯量と同じ)
             if (i === 1 && $('#steep-check').prop('checked')) {
-                totalWaters_ml[1] = $(`.pour-step1`).children('.pour-ml').val();
+                totalWater_mls[1] = $(`.pour-step1`).children('.pour-ml').val();
             }
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
-            let convertedPour_ml = Math.trunc(totalWaters_ml[i] - totalWaters_ml[i-1]);
+            convertedPour_mls.push(Math.trunc(totalWater_mls[i] - totalWater_mls[i-1]));
             processOutput += `
                 <tr class="output-recipe-step${i}">
-                    <td>${minutes}:${seconds}</td>
-                    <td>${convertedPour_ml} ml</td>
-                    <td>${totalWaters_ml[i]} ml</td>
+                    <td>${minutes[i]}:${seconds[i]}</td>
+                    <td>${convertedPour_mls[i]} ml</td>
+                    <td>${totalWater_mls[i]} ml</td>
                 </tr>
             `;
         }
