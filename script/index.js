@@ -134,28 +134,26 @@ $(document).ready(function() {
             </tr>
         `;
         let processOutput = DefaultProcessOutput;
-        let totalWater_ml = 0;
+        let totalWaters_ml=[0];
         // todo:アイスモード時、氷量も含めた合計量として変換を行えるようにする
         for (let i = 1; i <= pourTimes; i++) {
             // todo:算出とフォーマットが並行して行われてしまっているので、まず算出し、フォーマット用の関数に渡して整形するようにしたい
             let minutes = String($(`.pour-step${i}`).children('.minutes').val()).padStart(2, '0');
             let seconds = String($(`.pour-step${i}`).children('.seconds').val()).padStart(2, '0');
             let input_pour_ml = $(`.pour-step${i}`).children('.pour-ml').val();
-            // ひとつ前の総湯量を記録しておくバッファ(各投での注湯量を計算するために必要)
-            let totalWater_ml_buf = Math.trunc(totalWater_ml); 
-            totalWater_ml = Math.trunc(input_pour_ml * convertRate);
+            totalWaters_ml.push(Math.trunc(input_pour_ml * convertRate));
             // 蒸らし固定ONの場合、1投目の総湯量は固定(元レシピの1投目の総湯量と同じ)
             if (i === 1 && $('#steep-check').prop('checked')) {
-                totalWater_ml = $(`.pour-step1`).children('.pour-ml').val();
+                totalWaters_ml[1] = $(`.pour-step1`).children('.pour-ml').val();
             }
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
-            let convertedPour_ml = Math.trunc(totalWater_ml - totalWater_ml_buf);
+            let convertedPour_ml = Math.trunc(totalWaters_ml[i] - totalWaters_ml[i-1]);
             processOutput += `
                 <tr class="output-recipe-step${i}">
                     <td>${minutes}:${seconds}</td>
                     <td>${convertedPour_ml} ml</td>
-                    <td>${totalWater_ml} ml</td>
+                    <td>${totalWaters_ml[i]} ml</td>
                 </tr>
             `;
         }
