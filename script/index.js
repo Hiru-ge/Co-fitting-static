@@ -169,7 +169,7 @@ $(document).ready(function() {
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
 
         let targetBean_g, targetWaterTotal_ml, convertRate;
-        if($('#magnification').val() !== ''){ // 変換率が手動入力されている場合は、それを採用して変換する
+        if($('#magnification').val()){ // 変換率が手動入力されている場合は、それを採用して変換する
             convertRate = $('#magnification').val();
             targetBean_g = $('#bean-input').val()*convertRate;
             targetWaterTotal_ml = originWaterTotal_ml*convertRate;
