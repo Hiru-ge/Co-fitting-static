@@ -66,9 +66,10 @@ $(document).ready(function() {
         const PourTimes = $('#pour-times-input').val();
         const OriginSumWater = $(`.pour-step${PourTimes}`).children('.pour-ml').val();
         const OriginBean = $('#bean-input').val();
-        
-        const OriginRatio = brewParameterCompleter([/*豆量=*/OriginBean, /*総湯量=*/OriginSumWater, /*比率=*/'']);
-        $('#origin-ratio').html(OriginRatio);
+        if (OriginBean && OriginSumWater) {
+            const OriginRatio = brewParameterCompleter([/*豆量=*/OriginBean, /*総湯量=*/OriginSumWater, /*比率=*/'']);
+            $('#origin-ratio').html(OriginRatio);
+        }
     });
 
 
