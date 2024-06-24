@@ -185,9 +185,9 @@ $(document).ready(function() {
             return;
         }
 
-        // 変換後の豆量と総湯量を転記
-        $('.bean-output').text(targetBean_g);
-        $('.water-output').text(targetWaterTotal_ml);
+        // 変換後の豆量と総湯量を転記(小数点第一位まで表示)
+        $('.bean-output').text(Math.trunc(targetBean_g*10)/10);
+        $('.water-output').text(Math.trunc(targetWaterTotal_ml*10)/10);
 
         // 氷量が入力されている場合、変換後の氷量を算出・出力
         let convertedIce_g = Math.trunc($('#ice-input').val()*convertRate);
