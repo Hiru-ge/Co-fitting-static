@@ -32,6 +32,11 @@ div.introduce {
     border-radius: 1rem;
 }
 
+/* 出力欄テーブルの整形 */
+.recipe-output td {
+    padding: 0 0.5em;
+}
+
 /*ストップウォッチ部分*/
 #time {
     font-size: 2rem;
