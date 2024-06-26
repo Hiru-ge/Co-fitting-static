@@ -151,7 +151,7 @@ $(document).ready(function() {
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
             convertedPour_mls.push(Math.trunc(totalWater_mls[i] - totalWater_mls[i-1]));
             processOutput += `
-                <tr class="output-recipe-step${i}">
+                <tr>
                     <td>${minutes[i]}:${seconds[i]}</td>
                     <td>${convertedPour_mls[i]} ml</td>
                     <td>${totalWater_mls[i]} ml</td>
