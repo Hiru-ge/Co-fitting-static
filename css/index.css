@@ -16,6 +16,13 @@
     justify-content: center;
 }
 
+.preset-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
 /*装飾･見栄えに関する部分*/
 div.introduce {
     padding: 0.75rem;
@@ -95,6 +102,18 @@ input[type="text"].wide-input {
 }
 
 /*ボタン部分*/
+.preset-button {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 10rem;
+    padding: 0.5rem 2rem;
+    margin: 0.5rem 1rem;
+}
+
 .convert-buttons {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 700;
