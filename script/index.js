@@ -58,6 +58,31 @@ $(document).ready(function() {
         }
     }
 
+    function presetActivate(PresetId){
+        // PresetIdがPresetRecipesに存在するか確認して、存在すればフォームに反映
+        if(PresetRecipes[PresetId]){
+            // 変換前レシピの入力欄を生成   
+            $('#pour-times-input').val(PresetRecipes[PresetId].pourTimes);
+            const InputPourTimes = $('#pour-times-input').val();
+            const CurrentPourTimes = $('.origin-process').children().length;
+            originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
+
+            // プリセットレシピの内容をフォームに反映
+            $('#bean-input').val(PresetRecipes[PresetId].bean_g);
+            for (let i = 1; i <= InputPourTimes; i++) {
+                let minutes = PresetRecipes[PresetId].recipe[i-1][0].split(':')[0];
+                let seconds = PresetRecipes[PresetId].recipe[i-1][0].split(':')[1];
+                let pour_ml = PresetRecipes[PresetId].recipe[i-1][1];
+                $(`.pour-step${i}`).children('.minutes').val(minutes);
+                $(`.pour-step${i}`).children('.seconds').val(seconds);
+                $(`.pour-step${i}`).children('.pour-ml').val(pour_ml);
+            }
+        }else{
+            console.log('Error[presetActivate]: プリセットIDが不正です');
+            return 'Error';
+        }
+    }
+
     $('.preset-button').on('click', function(){
         const PresetId = $(this).attr('id');
         presetActivate(PresetId);
