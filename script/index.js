@@ -77,6 +77,10 @@ $(document).ready(function() {
                 $(`.pour-step${i}`).children('.seconds').val(seconds);
                 $(`.pour-step${i}`).children('.pour-ml').val(pour_ml);
             }
+
+            // プリセットレシピの比率を計算して表示
+            const OriginRatio = brewParameterCompleter([PresetRecipes[PresetId].bean_g, PresetRecipes[PresetId].water_ml, '']);
+            $('#origin-ratio').html(OriginRatio);
         }else{
             console.log('Error[presetActivate]: プリセットIDが不正です');
             return 'Error';
