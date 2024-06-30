@@ -21,7 +21,11 @@ $(document).ready(function() {
     // プリセットレシピ呼び出し
         // プリセットレシピ用のデータを別のファイル or オブジェクトで持っておき、それを呼び出す形にする
 
-        
+    $('.preset-button').on('click', function(){
+        const PresetId = $(this).attr('id');
+        presetActivate(PresetId);
+    });
+
     // 変換前レシピ入力欄の出力
         // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
         // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
