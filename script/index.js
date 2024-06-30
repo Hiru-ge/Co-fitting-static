@@ -20,6 +20,24 @@ $(document).ready(function() {
 
     // プリセットレシピ呼び出し
         // プリセットレシピ用のデータを別のファイル or オブジェクトで持っておき、それを呼び出す形にする
+    const PresetRecipes = {
+        "4-6method" : {
+            pourTimes: '5',
+            bean_g: '30',
+            water_ml: '300',
+            ratio: '10.0',
+            recipe: [['0:00', 60], ['0:45', 120], ['1:30', 180], ['2:10', 240], ['2:45', 300]]
+        },
+
+        "hatakeyama" : {
+            pourTimes: '5',
+            bean_g: '15',
+            water_ml: '230',
+            ratio: '10.0',
+            recipe: [['0:00',30], ['0:30', 120], ['1:00', 160], ['1:20', 200], ['1:40', 230]]
+        }        
+        
+    };
 
     $('.preset-button').on('click', function(){
         const PresetId = $(this).attr('id');
