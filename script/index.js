@@ -39,18 +39,7 @@ $(document).ready(function() {
         
     };
 
-    $('.preset-button').on('click', function(){
-        const PresetId = $(this).attr('id');
-        presetActivate(PresetId);
-    });
-
-    // 変換前レシピ入力欄の出力
-        // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
-        // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
-    $('#pour-times-input').on('change', function(){
-        const InputPourTimes = $('#pour-times-input').val();
-        const CurrentPourTimes = $('.origin-process').children().length;
-
+    function originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes){
         if (InputPourTimes > CurrentPourTimes) {
             for (let i = CurrentPourTimes; i < InputPourTimes; i++) {                
                 let processInput = `
@@ -67,6 +56,20 @@ $(document).ready(function() {
                 $(`.pour-step${i}`).remove();
             }
         }
+    }
+
+    $('.preset-button').on('click', function(){
+        const PresetId = $(this).attr('id');
+        presetActivate(PresetId);
+    });
+
+    // 変換前レシピ入力欄の出力
+        // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
+        // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
+    $('#pour-times-input').on('change', function(){
+        const InputPourTimes = $('#pour-times-input').val();
+        const CurrentPourTimes = $('.origin-process').children().length;
+        originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
     });
 
     // 変換前レシピの入力補助
