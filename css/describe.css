@@ -37,6 +37,11 @@ img {
     max-height: 60vh;
 }
 
+iframe {
+    max-width: 100%;
+    height: 40vh;
+}
+
 /*モバイル用のスタイル*/
 @media (max-width: 600px) {
     .container {
