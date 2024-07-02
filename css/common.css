@@ -19,6 +19,13 @@ footer {
     bottom: 0;
 }
 
+.pageTop-button-div {
+    position: fixed;
+    /*右下に固定*/
+    bottom: 5rem;
+    right: 1rem;
+}
+
 h1 {
     padding: 0.5rem;
     font-size: 2rem;
@@ -43,14 +50,16 @@ header, footer, h1, h2, h3, h4, div.timer-div {
 }
 
 /*ボタン部分*/
-.pageTop-button {
+button {
     display: inline;
     background-color: gray;
-    color: #fff;
-    height: 2rem;
-    width: 2rem;
     border: none;
     border-radius: 0.5rem;
     padding: 0.3rem;
     cursor: pointer;
+}
+
+.pageTop-button {
+    height: 2.5rem;
+    width: 2.5rem;
 }
