@@ -315,11 +315,11 @@ $(document).ready(function() {
 
     
     
-    // ストップウォッチ部分のトグル機能
+    // トグル機能
     // Tips:JavaScriptで動かすと負荷がかかるので、必要に迫られればCSSでの実装も検討(滑らかに閉じるのが難しかったので現在はJSで実装)
-    $('.timer-item').hide();
+    $('.accordion-item').hide();
     $('.accordion-head').on('click', function() {
-        $('.accordion-toggle').toggleClass('rotate-90');
-        $('.timer-item').slideToggle(300);
+        $(this).children('.accordion-toggle').toggleClass('rotate-90');
+        $(this).next().children('.accordion-item').slideToggle(300);
     });
 });
