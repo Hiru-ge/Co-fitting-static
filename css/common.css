@@ -47,8 +47,10 @@ header, footer, h1, h2, h3, h4, div.timer-div {
     display: inline;
     background-color: gray;
     color: #fff;
+    height: 2rem;
+    width: 2rem;
     border: none;
     border-radius: 0.5rem;
-    padding: 0.3rem 2rem;
+    padding: 0.3rem;
     cursor: pointer;
 }
