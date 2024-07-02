@@ -63,3 +63,9 @@ button {
     height: 2.5rem;
     width: 2.5rem;
 }
+
+footer button a {
+    background-color: gray;
+    color: #fff;
+    text-decoration: none;
+}
