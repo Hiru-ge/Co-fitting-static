@@ -29,6 +29,15 @@ $(document).ready(function() {
             recipe: [['0:00', 60], ['0:45', 120], ['1:30', 180], ['2:10', 240], ['2:45', 300]]
         },
 
+        "4-6method-ice" : {
+            pourTimes: '5',
+            bean_g: '20',
+            ice_g: '80',
+            water_ml: '150',
+            ratio: '7.5',
+            recipe: [['0:00', 30], ['0:40', 60], ['1:10', 90], ['1:40', 120], ['2:10', 150]]
+        },
+
         "hatakeyamasan" : {
             pourTimes: '5',
             bean_g: '15',
@@ -69,6 +78,7 @@ $(document).ready(function() {
 
             // プリセットレシピの内容をフォームに反映
             $('#bean-input').val(PresetRecipes[PresetId].bean_g);
+            $('#ice-input').val(PresetRecipes[PresetId].ice_g);
             for (let i = 1; i <= InputPourTimes; i++) {
                 let minutes = PresetRecipes[PresetId].recipe[i-1][0].split(':')[0];
                 let seconds = PresetRecipes[PresetId].recipe[i-1][0].split(':')[1];
