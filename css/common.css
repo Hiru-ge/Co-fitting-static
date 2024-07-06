@@ -38,6 +38,10 @@ h4 {
 }
 
 /* ハンバーガーメニュー */
+body{
+  overflow-x: hidden;   /* 横スクロールの停止(横にはみ出た分は非表示 */
+}
+
 .header-area {
     display: flex;
     justify-content: space-between;
@@ -81,6 +85,7 @@ h4 {
     top: 5rem;
     width: 100%;
     left: 0;
+    transform: translateX(100%);
 }
 
 .slide-menu li {
