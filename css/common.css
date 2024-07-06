@@ -96,6 +96,11 @@ body{
     text-align: center;
 }
 
+.slide-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .hamburger.active span:first-of-type{/* ハンバーガーメニューの1番目の線 */
   top: 50%;
   transform: rotate(45deg);
