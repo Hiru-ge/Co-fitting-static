@@ -13,8 +13,8 @@
 }
 
 /*装飾･見栄えに関する部分*/
-ul,
-ol {
+.container ul,
+.container ol {
     margin-left: 1.5rem;
 }
 
