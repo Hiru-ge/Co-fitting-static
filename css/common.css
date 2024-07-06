@@ -66,6 +66,7 @@ body{
     width: 100%;
     height: 2px;
     background-color: #fff;
+    transition: .5s;
 }
 
 .hamburger span:first-of-type {
@@ -90,6 +91,7 @@ body{
     width: 100%;
     left: 0;
     transform: translateX(100%);
+    transition: .5s;
 }
 
 .slide-menu li {
@@ -97,6 +99,22 @@ body{
     line-height: 400%;
     text-align: center;
 }
+
+.hamburger.active span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+  top: 50%;
+  transform: rotate(45deg);
+}
+.hamburger.active span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+  opacity: 0;/* 透明にする */
+}
+.hamburger.active span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+  top: 50%;
+  transform: rotate(-45deg);
+}
+.slide-menu.active{
+  transform: translateX(0); 
+}
+
 /* ハンバーガーメニューここまで */
 
 /* フォント指定 */
