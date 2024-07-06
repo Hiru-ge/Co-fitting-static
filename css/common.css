@@ -42,10 +42,6 @@ body{
   overflow-x: hidden;   /* 横スクロールの停止(横にはみ出た分は非表示 */
 }
 
-.slide-menu li {
-    list-style: none;   /* リストのマーカーを消す */
-}
-
 .header-area {
     display: flex;
     justify-content: space-between;
@@ -95,6 +91,7 @@ body{
 }
 
 .slide-menu li {
+    list-style: none;   /* リストのマーカーを消す */
     color: #fff;
     line-height: 400%;
     text-align: center;
