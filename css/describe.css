@@ -45,7 +45,7 @@ iframe {
 /*モバイル用のスタイル*/
 @media (max-width: 600px) {
     .container {
-        margin: 1rem 0rem 5rem 0rem;
+        margin: 5rem 0rem;
     }
 
     .container-item {
