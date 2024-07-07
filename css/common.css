@@ -13,6 +13,12 @@ footer {
     width: 100%;
 }
 
+header {
+    position: fixed;
+    /*上部に固定*/
+    top: 0;
+} 
+
 footer {
     position: fixed;
     /*下部に固定*/
@@ -79,7 +85,6 @@ body{
     top: 100%;
 }
 
-/* fixme:メニューの位置が画面上部で固定されているため、開いたまま移動しようとするとスライドメニューだけが画面上部に残ってしまう。メニュー下部にくっついたままにするか、header全体が画面上部に固定されるように修正するべき。*/
 .slide-menu {
     background-color: rgba(0, 0, 0, .8);
     position: fixed;
