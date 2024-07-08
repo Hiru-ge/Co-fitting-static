@@ -25,7 +25,6 @@ $(document).ready(function() {
             pourTimes: '5',
             bean_g: '20',
             water_ml: '300',
-            ratio: '10.0',
             recipe: [['0:00', 60], ['0:45', 120], ['1:30', 180], ['2:10', 240], ['2:45', 300]]
         },
 
@@ -34,7 +33,6 @@ $(document).ready(function() {
             bean_g: '20',
             ice_g: '80',
             water_ml: '150',
-            ratio: '7.5',
             recipe: [['0:00', 30], ['0:40', 60], ['1:10', 90], ['1:40', 120], ['2:10', 150]]
         },
 
@@ -42,7 +40,6 @@ $(document).ready(function() {
             pourTimes: '5',
             bean_g: '15',
             water_ml: '230',
-            ratio: '10.0',
             recipe: [['0:00',30], ['0:30', 120], ['1:00', 150], ['1:20', 190], ['1:40', 230]]
         }        
         
