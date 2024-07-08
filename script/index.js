@@ -67,26 +67,28 @@ $(document).ready(function() {
     function presetActivate(PresetId){
         // PresetIdがPresetRecipesに存在するか確認して、存在すればフォームに反映
         if(PresetRecipes[PresetId]){
+            const SelectedRecipe= PresetRecipes[PresetId];
+
             // 変換前レシピの入力欄を生成   
-            $('#pour-times-input').val(PresetRecipes[PresetId].pourTimes);
+            $('#pour-times-input').val(SelectedRecipe.pourTimes);
             const InputPourTimes = $('#pour-times-input').val();
             const CurrentPourTimes = $('.origin-process').children().length;
             originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
 
             // プリセットレシピの内容をフォームに反映
-            $('#bean-input').val(PresetRecipes[PresetId].bean_g);
-            $('#ice-input').val(PresetRecipes[PresetId].ice_g);
+            $('#bean-input').val(SelectedRecipe.bean_g);
+            $('#ice-input').val(SelectedRecipe.ice_g);
             for (let i = 1; i <= InputPourTimes; i++) {
-                let minutes = PresetRecipes[PresetId].recipe[i-1][0].split(':')[0];
-                let seconds = PresetRecipes[PresetId].recipe[i-1][0].split(':')[1];
-                let pour_ml = PresetRecipes[PresetId].recipe[i-1][1];
+                let minutes = SelectedRecipe.recipe[i-1][0].split(':')[0];
+                let seconds = SelectedRecipe.recipe[i-1][0].split(':')[1];
+                let pour_ml = SelectedRecipe.recipe[i-1][1];
                 $(`.pour-step${i}`).children('.minutes').val(minutes);
                 $(`.pour-step${i}`).children('.seconds').val(seconds);
                 $(`.pour-step${i}`).children('.pour-ml').val(pour_ml);
             }
 
             // プリセットレシピの比率を計算して表示
-            const OriginRatio = brewParameterCompleter([PresetRecipes[PresetId].bean_g, PresetRecipes[PresetId].water_ml, '']);
+            const OriginRatio = brewParameterCompleter([SelectedRecipe.bean_g, SelectedRecipe.water_ml, '']);
             $('#origin-ratio').html(OriginRatio);
         }else{
             console.log('Error[presetActivate]: プリセットIDが不正です');
