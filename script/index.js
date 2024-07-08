@@ -194,14 +194,14 @@ $(document).ready(function() {
     }
 
     function recipeConverter(pourTimes, convertRate) {
-        const DefaultProcessOutput = `
+        const DefaultOutput = `
             <tr>
                 <th>経過時間</th>
                 <th>注湯量</th>
                 <th>総注湯量</th>
             </tr>
         `;
-        let processOutput = DefaultProcessOutput;
+        let Output = DefaultOutput;
         let totalWater_mls=[0], minutes=["0"], seconds=["00"], input_pour_mls=[0],convertedPour_mls=[0];
         // todo:アイスモード時、氷量も含めた合計量として変換を行えるようにする
         for (let i = 1; i <= pourTimes; i++) {
@@ -217,7 +217,7 @@ $(document).ready(function() {
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
             convertedPour_mls.push(Math.trunc(totalWater_mls[i] - totalWater_mls[i-1]));
-            processOutput += `
+            Output += `
                 <tr>
                     <td>${minutes[i]}:${seconds[i]}</td>
                     <td>${convertedPour_mls[i]} ml</td>
@@ -225,7 +225,7 @@ $(document).ready(function() {
                 </tr>
             `;
         }
-        return processOutput;
+        return Output;
     }
 
     // レシピの変換･変換後レシピの出力
