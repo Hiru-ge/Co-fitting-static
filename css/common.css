@@ -1,52 +1,7 @@
-/*装飾･見栄えに関する部分*/
-html {
-    background-color: #f5eede;
-    font-family: 'Hiragino Kaku Gothic', '游ゴシック', sans-serif;
-}
-
-header,
-footer {
-    background-color: #876b36;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem;
-    width: 100%;
-}
-
-header {
-    position: fixed;
-    /*上部に固定*/
-    top: 0;
-} 
-
-footer {
-    position: fixed;
-    /*下部に固定*/
-    bottom: 0;
-}
-
-.pageTop-button-div {
-    position: fixed;
-    /*右下に固定*/
-    bottom: 4rem;
-    right: 1rem;
-}
-
-h1 {
-    padding: 0.5rem;
-    font-size: 1.7rem;
-    letter-spacing: 0.1rem; /*文字間を少し広げる*/
-    text-align: center;
-}
-
-h3,
-h4 {
-    padding: 0.25rem 0;
-}
-
+/* 機能に関する部分 */
 /* ハンバーガーメニュー */
 body{
-  overflow-x: hidden;   /* 横スクロールの停止(横にはみ出た分は非表示 */
+  overflow-x: hidden;   /* 横スクロールの停止(横にはみ出た分は非表示) */
 }
 
 .header-area {
@@ -71,18 +26,16 @@ body{
     transition: .5s;
 }
 
+/* ハンバーガーメニューの3本線の位置 */
 .hamburger span:first-of-type {
-    /* ハンバーガーメニューの1番目の線 */
     top: 0;
 }
 
 .hamburger span:nth-of-type(2) {
-    /* ハンバーガーメニューの2番目の線 */
     top: 50%;
 }
 
 .hamburger span:last-of-type {
-    /* ハンバーガーメニューの3番目の線 */
     top: 100%;
 }
 
@@ -97,7 +50,7 @@ body{
 }
 
 .slide-menu li {
-    list-style: none;   /* リストのマーカーを消す */
+    list-style: none;
     color: #fff;
     line-height: 400%;
     text-align: center;
@@ -108,22 +61,65 @@ header a{
     text-decoration: none;
 }
 
-.hamburger.active span:first-of-type{/* ハンバーガーメニューの1番目の線 */
+/* ハンバーガーメニュー起動時のアニメーション */
+.hamburger.active span:first-of-type{
   top: 50%;
   transform: rotate(45deg);
 }
-.hamburger.active span:nth-of-type(2){/* ハンバーガーメニューの2番目の線 */
+.hamburger.active span:nth-of-type(2){
   opacity: 0;/* 透明にする */
 }
-.hamburger.active span:last-of-type{/* ハンバーガーメニューの3番目の線 */
+.hamburger.active span:last-of-type{
   top: 50%;
   transform: rotate(-45deg);
 }
 .slide-menu.active{
   transform: translateX(0); 
 }
-
 /* ハンバーガーメニューここまで */
+
+/*装飾･見栄えに関する部分*/
+html {
+    background-color: #f5eede;
+    font-family: 'Hiragino Kaku Gothic', '游ゴシック', sans-serif;
+}
+
+header,
+footer {
+    background-color: #876b36;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+header {    /*上部に固定*/
+    position: fixed;
+    top: 0;
+} 
+
+footer {    /*下部に固定*/
+    position: fixed;
+    bottom: 0;
+}
+
+.pageTop-button-div {   /*右下に固定*/
+    position: fixed;
+    bottom: 4rem;
+    right: 1rem;
+}
+
+h1 {
+    padding: 0.5rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem; /*文字間を少し広げる*/
+    text-align: center;
+}
+
+h3,
+h4 {
+    padding: 0.25rem 0;
+}
 
 /* フォント指定 */
 header, footer, h1, h2, h3, h4, div.timer-div {

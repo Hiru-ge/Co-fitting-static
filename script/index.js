@@ -25,7 +25,6 @@ $(document).ready(function() {
             pourTimes: '5',
             bean_g: '20',
             water_ml: '300',
-            ratio: '10.0',
             recipe: [['0:00', 60], ['0:45', 120], ['1:30', 180], ['2:10', 240], ['2:45', 300]]
         },
 
@@ -34,7 +33,6 @@ $(document).ready(function() {
             bean_g: '20',
             ice_g: '80',
             water_ml: '150',
-            ratio: '7.5',
             recipe: [['0:00', 30], ['0:40', 60], ['1:10', 90], ['1:40', 120], ['2:10', 150]]
         },
 
@@ -42,7 +40,6 @@ $(document).ready(function() {
             pourTimes: '5',
             bean_g: '15',
             water_ml: '230',
-            ratio: '10.0',
             recipe: [['0:00',30], ['0:30', 120], ['1:00', 150], ['1:20', 190], ['1:40', 230]]
         }        
         
@@ -70,26 +67,28 @@ $(document).ready(function() {
     function presetActivate(PresetId){
         // PresetIdがPresetRecipesに存在するか確認して、存在すればフォームに反映
         if(PresetRecipes[PresetId]){
+            const SelectedRecipe= PresetRecipes[PresetId];
+
             // 変換前レシピの入力欄を生成   
-            $('#pour-times-input').val(PresetRecipes[PresetId].pourTimes);
+            $('#pour-times-input').val(SelectedRecipe.pourTimes);
             const InputPourTimes = $('#pour-times-input').val();
             const CurrentPourTimes = $('.origin-process').children().length;
             originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
 
             // プリセットレシピの内容をフォームに反映
-            $('#bean-input').val(PresetRecipes[PresetId].bean_g);
-            $('#ice-input').val(PresetRecipes[PresetId].ice_g);
+            $('#bean-input').val(SelectedRecipe.bean_g);
+            $('#ice-input').val(SelectedRecipe.ice_g);
             for (let i = 1; i <= InputPourTimes; i++) {
-                let minutes = PresetRecipes[PresetId].recipe[i-1][0].split(':')[0];
-                let seconds = PresetRecipes[PresetId].recipe[i-1][0].split(':')[1];
-                let pour_ml = PresetRecipes[PresetId].recipe[i-1][1];
+                let minutes = SelectedRecipe.recipe[i-1][0].split(':')[0];
+                let seconds = SelectedRecipe.recipe[i-1][0].split(':')[1];
+                let pour_ml = SelectedRecipe.recipe[i-1][1];
                 $(`.pour-step${i}`).children('.minutes').val(minutes);
                 $(`.pour-step${i}`).children('.seconds').val(seconds);
                 $(`.pour-step${i}`).children('.pour-ml').val(pour_ml);
             }
 
             // プリセットレシピの比率を計算して表示
-            const OriginRatio = brewParameterCompleter([PresetRecipes[PresetId].bean_g, PresetRecipes[PresetId].water_ml, '']);
+            const OriginRatio = brewParameterCompleter([SelectedRecipe.bean_g, SelectedRecipe.water_ml, '']);
             $('#origin-ratio').html(OriginRatio);
         }else{
             console.log('Error[presetActivate]: プリセットIDが不正です');
@@ -195,14 +194,14 @@ $(document).ready(function() {
     }
 
     function recipeConverter(pourTimes, convertRate) {
-        const DefaultProcessOutput = `
+        const DefaultOutput = `
             <tr>
                 <th>経過時間</th>
                 <th>注湯量</th>
                 <th>総注湯量</th>
             </tr>
         `;
-        let processOutput = DefaultProcessOutput;
+        let Output = DefaultOutput;
         let totalWater_mls=[0], minutes=["0"], seconds=["00"], input_pour_mls=[0],convertedPour_mls=[0];
         // todo:アイスモード時、氷量も含めた合計量として変換を行えるようにする
         for (let i = 1; i <= pourTimes; i++) {
@@ -218,7 +217,7 @@ $(document).ready(function() {
 
             // 各投での注湯量を計算(総湯量 - ひとつ前の総湯量)
             convertedPour_mls.push(Math.trunc(totalWater_mls[i] - totalWater_mls[i-1]));
-            processOutput += `
+            Output += `
                 <tr>
                     <td>${minutes[i]}:${seconds[i]}</td>
                     <td>${convertedPour_mls[i]} ml</td>
@@ -226,7 +225,7 @@ $(document).ready(function() {
                 </tr>
             `;
         }
-        return processOutput;
+        return Output;
     }
 
     // レシピの変換･変換後レシピの出力
