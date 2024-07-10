@@ -64,7 +64,7 @@ $(document).ready(function() {
     function presetActivate(PresetId){
         // PresetIdがPresetRecipesに存在するか確認して、存在すればフォームに反映
         if(PresetRecipes[PresetId]){
-            const SelectedRecipe= PresetRecipes[PresetId];
+            const SelectedRecipe = PresetRecipes[PresetId];
             // 選択中のボタンは暗くする
             $('.preset-button').removeClass('selected-button');
             $(`#${PresetId}`).addClass('selected-button');
@@ -284,39 +284,39 @@ $(document).ready(function() {
     
     // 時間を表示する関数
     function displayTime() {
-      const CurrentTime = new Date(Date.now() - startTime + stopTime);
-      const M = String(CurrentTime.getMinutes()).padStart(2, '0');
-      const S = String(CurrentTime.getSeconds()).padStart(2, '0');
-    
-      Time.textContent = `${M}:${S}`;
-      timeoutID = setTimeout(displayTime, 10);
+        const CurrentTime = new Date(Date.now() - startTime + stopTime);
+        const M = String(CurrentTime.getMinutes()).padStart(2, '0');
+        const S = String(CurrentTime.getSeconds()).padStart(2, '0');
+        
+        Time.textContent = `${M}:${S}`;
+        timeoutID = setTimeout(displayTime, 10);
     }
     
     // スタートボタンがクリックされたら時間を進める
     StartButton.addEventListener('click', () => {
-      StartButton.disabled = true;
-      StopButton.disabled = false;
-      ResetButton.disabled = true;
-      startTime = Date.now();
-      displayTime();
+        StartButton.disabled = true;
+        StopButton.disabled = false;
+        ResetButton.disabled = true;
+        startTime = Date.now();
+        displayTime();
     });
     
     // ストップボタンがクリックされたら時間を止める
     StopButton.addEventListener('click', function() {
-      StartButton.disabled = false;
-      StopButton.disabled = true;
-      ResetButton.disabled = false;
-      clearTimeout(timeoutID);
-      stopTime += (Date.now() - startTime);
+        StartButton.disabled = false;
+        StopButton.disabled = true;
+        ResetButton.disabled = false;
+        clearTimeout(timeoutID);
+        stopTime += (Date.now() - startTime);
     });
     
     // リセットボタンがクリックされたら時間を0に戻す
     ResetButton.addEventListener('click', function() {
-      StartButton.disabled = false;
-      StopButton.disabled = true;
-      ResetButton.disabled = true;
-      Time.textContent = '00:00';
-      stopTime = 0;
+        StartButton.disabled = false;
+        StopButton.disabled = true;
+        ResetButton.disabled = true;
+        Time.textContent = '00:00';
+        stopTime = 0;
     });
 
     // トグル機能
