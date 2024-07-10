@@ -293,7 +293,7 @@ $(document).ready(function() {
     }
     
     // スタートボタンがクリックされたら時間を進める
-    StartButton.addEventListener('click', () => {
+    $('#start').on('click', function() {
         StartButton.disabled = true;
         StopButton.disabled = false;
         ResetButton.disabled = true;
@@ -302,7 +302,7 @@ $(document).ready(function() {
     });
     
     // ストップボタンがクリックされたら時間を止める
-    StopButton.addEventListener('click', function() {
+    $('#stop').on('click', function() {
         StartButton.disabled = false;
         StopButton.disabled = true;
         ResetButton.disabled = false;
@@ -311,7 +311,7 @@ $(document).ready(function() {
     });
     
     // リセットボタンがクリックされたら時間を0に戻す
-    ResetButton.addEventListener('click', function() {
+    $('#reset').on('click', function() {
         StartButton.disabled = false;
         StopButton.disabled = true;
         ResetButton.disabled = true;
