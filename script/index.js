@@ -19,7 +19,7 @@ $(document).ready(function() {
     });
 
     // プリセットレシピ呼び出し
-        // プリセットレシピ用のデータを別のファイル or オブジェクトで持っておき、それを呼び出す形にする
+        // プリセットレシピ用のデータをオブジェクトで持っておき、それを呼び出す
     const PresetRecipes = {
         "4-6method" : {
             pourTimes: '5',
@@ -102,8 +102,6 @@ $(document).ready(function() {
     });
 
     // 変換前レシピ入力欄の出力
-        // 変換前レシピの投数が変化したら入力内容を取得して、投数分だけレシピ入力<input>欄を生成する
-        // ただし、2投目まではデフォルトで表示しておき、足りない分を生成･増えすぎたら削除する
     $('#pour-times-input').on('change', function(){
         const InputPourTimes = $('#pour-times-input').val();
         const CurrentPourTimes = $('.origin-process').children().length;
@@ -321,9 +319,6 @@ $(document).ready(function() {
       stopTime = 0;
     });
 
-
-    
-    
     // トグル機能
     // Tips:JavaScriptで動かすと負荷がかかるので、必要に迫られればCSSでの実装も検討(滑らかに閉じるのが難しかったので現在はJSで実装)
     $('.accordion-item').hide();
