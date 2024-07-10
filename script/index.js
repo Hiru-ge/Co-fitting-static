@@ -61,13 +61,16 @@ $(document).ready(function() {
         }
     }
 
+    function selectedButtonDarkener(LightButtonsClass, DarkButtonId){
+        $(`.${LightButtonsClass}`).removeClass('selected-button');
+        $(`#${DarkButtonId}`).addClass('selected-button');
+    }
+
     function presetActivate(PresetId){
         // PresetIdがPresetRecipesに存在するか確認して、存在すればフォームに反映
         if(PresetRecipes[PresetId]){
             const SelectedRecipe = PresetRecipes[PresetId];
-            // 選択中のボタンは暗くする
-            $('.preset-button').removeClass('selected-button');
-            $(`#${PresetId}`).addClass('selected-button');
+            selectedButtonDarkener('preset-button', PresetId);
 
             // 変換前レシピの入力欄を生成   
             $('#pour-times-input').val(SelectedRecipe.recipe.length);
@@ -298,8 +301,7 @@ $(document).ready(function() {
         StopButton.disabled = false;
         ResetButton.disabled = true;
         // 選択中のボタンは暗くする
-        $('.timer-button').removeClass('selected-button');
-        $(`#${StartButton.id}`).addClass('selected-button');
+        selectedButtonDarkener('timer-button', StartButton.id);
         
         startTime = Date.now();
         displayTime();
@@ -310,8 +312,8 @@ $(document).ready(function() {
         StartButton.disabled = false;
         StopButton.disabled = true;
         ResetButton.disabled = false;
-        $('.timer-button').removeClass('selected-button');
-        $(`#${StopButton.id}`).addClass('selected-button');
+        selectedButtonDarkener('timer-button', StopButton.id);
+
         clearTimeout(timeoutID);
         stopTime += (Date.now() - startTime);
     });
@@ -321,8 +323,7 @@ $(document).ready(function() {
         StartButton.disabled = false;
         StopButton.disabled = true;
         ResetButton.disabled = true;
-        $('.timer-button').removeClass('selected-button');
-        $(`#${ResetButton.id}`).addClass('selected-button');
+        selectedButtonDarkener('timer-button', ResetButton.id);
         Time.textContent = '00:00';
         stopTime = 0;
     });
