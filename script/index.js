@@ -22,14 +22,12 @@ $(document).ready(function() {
         // プリセットレシピ用のデータをオブジェクトで持っておき、それを呼び出す
     const PresetRecipes = {
         "4-6method" : {
-            pourTimes: '5',
             bean_g: '20',
             water_ml: '300',
             recipe: [['0:00', 60], ['0:45', 120], ['1:30', 180], ['2:10', 240], ['2:45', 300]]
         },
 
         "4-6method-ice" : {
-            pourTimes: '5',
             bean_g: '20',
             ice_g: '80',
             water_ml: '150',
@@ -37,7 +35,6 @@ $(document).ready(function() {
         },
 
         "hatakeyamasan" : {
-            pourTimes: '5',
             bean_g: '15',
             water_ml: '230',
             recipe: [['0:00',30], ['0:30', 120], ['1:00', 150], ['1:20', 190], ['1:40', 230]]
@@ -70,7 +67,7 @@ $(document).ready(function() {
             const SelectedRecipe= PresetRecipes[PresetId];
 
             // 変換前レシピの入力欄を生成   
-            $('#pour-times-input').val(SelectedRecipe.pourTimes);
+            $('#pour-times-input').val(SelectedRecipe.recipe.length);
             const InputPourTimes = $('#pour-times-input').val();
             const CurrentPourTimes = $('.origin-process').children().length;
             originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
