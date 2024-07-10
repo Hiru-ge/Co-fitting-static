@@ -297,6 +297,10 @@ $(document).ready(function() {
         StartButton.disabled = true;
         StopButton.disabled = false;
         ResetButton.disabled = true;
+        // 選択中のボタンは暗くする
+        $('.timer-button').removeClass('selected-button');
+        $(`#${StartButton.id}`).addClass('selected-button');
+        
         startTime = Date.now();
         displayTime();
     });
@@ -306,6 +310,8 @@ $(document).ready(function() {
         StartButton.disabled = false;
         StopButton.disabled = true;
         ResetButton.disabled = false;
+        $('.timer-button').removeClass('selected-button');
+        $(`#${StopButton.id}`).addClass('selected-button');
         clearTimeout(timeoutID);
         stopTime += (Date.now() - startTime);
     });
@@ -315,6 +321,8 @@ $(document).ready(function() {
         StartButton.disabled = false;
         StopButton.disabled = true;
         ResetButton.disabled = true;
+        $('.timer-button').removeClass('selected-button');
+        $(`#${ResetButton.id}`).addClass('selected-button');
         Time.textContent = '00:00';
         stopTime = 0;
     });
