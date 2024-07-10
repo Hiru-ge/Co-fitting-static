@@ -65,6 +65,9 @@ $(document).ready(function() {
         // PresetIdがPresetRecipesに存在するか確認して、存在すればフォームに反映
         if(PresetRecipes[PresetId]){
             const SelectedRecipe= PresetRecipes[PresetId];
+            // 選択中のボタンは暗くする
+            $('.preset-button').removeClass('selected-button');
+            $(`#${PresetId}`).addClass('selected-button');
 
             // 変換前レシピの入力欄を生成   
             $('#pour-times-input').val(SelectedRecipe.recipe.length);

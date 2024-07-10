@@ -161,3 +161,7 @@ html.ice-mode {
 header.ice-mode, footer.ice-mode {
     background-color: #396fa8;
 }
+
+.selected-button {  /* 選択中のボタンは暗くして、選択中であることを示す */
+    background-color: gray;
+}
