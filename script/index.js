@@ -79,8 +79,6 @@ $(document).ready(function() {
             originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
 
             // プリセットレシピの内容をフォームに反映
-            $('#bean-input').val(SelectedRecipe.bean_g);
-            
             // アイス用のレシピの場合は、アイスモードをONにする
             if(SelectedRecipe.ice_g){
                 $('#ice-check').prop('checked', true).change();
@@ -88,6 +86,7 @@ $(document).ready(function() {
             }else{
                 $('#ice-check').prop('checked', false).change();
             }
+            $('#bean-input').val(SelectedRecipe.bean_g);    // 豆量転記
 
             for (let i = 1; i <= InputPourTimes; i++) {
                 let minutes = SelectedRecipe.recipe[i-1][0].split(':')[0];
