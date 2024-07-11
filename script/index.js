@@ -79,9 +79,16 @@ $(document).ready(function() {
             originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
 
             // プリセットレシピの内容をフォームに反映
-                // todo:アイス用のレシピかどうかに応じて、アイスモードをON/OFFする
             $('#bean-input').val(SelectedRecipe.bean_g);
-            $('#ice-input').val(SelectedRecipe.ice_g);
+            
+            // アイス用のレシピの場合は、アイスモードをONにする
+            if(SelectedRecipe.ice_g){
+                $('#ice-check').prop('checked', true).change();
+                $('#ice-input').val(SelectedRecipe.ice_g);
+            }else{
+                $('#ice-check').prop('checked', false).change();
+            }
+
             for (let i = 1; i <= InputPourTimes; i++) {
                 let minutes = SelectedRecipe.recipe[i-1][0].split(':')[0];
                 let seconds = SelectedRecipe.recipe[i-1][0].split(':')[1];
