@@ -165,10 +165,10 @@ $(document).ready(function() {
 
     // 変換目標入力欄のクリア
     $('.clear-button').on('click', function(){
+        event.preventDefault(); // ページ遷移を防ぐ
         $('#bean-target').val('');
         $('#water-target').val('');
         $('#ratio-target').val('');
-        event.preventDefault(); // ページ遷移を防ぐ
     });
 
 
