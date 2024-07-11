@@ -79,6 +79,7 @@ $(document).ready(function() {
             originRecipeFormLengthAdjuster(InputPourTimes, CurrentPourTimes);
 
             // プリセットレシピの内容をフォームに反映
+                // todo:アイス用のレシピかどうかに応じて、アイスモードをON/OFFする
             $('#bean-input').val(SelectedRecipe.bean_g);
             $('#ice-input').val(SelectedRecipe.ice_g);
             for (let i = 1; i <= InputPourTimes; i++) {
