@@ -1,6 +1,7 @@
 /*機能に関する部分*/
 /*Flexbox*/
 .container {
+    /* todo: .itemを常に縦並びにし、常に画面幅に収まるようにする */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
