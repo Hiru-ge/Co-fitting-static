@@ -148,6 +148,12 @@ button {
     width: 2.5rem;
 }
 
+.pageTop-button img {
+    /* ボタンの画像を親要素の中心に配置 */
+    display: block;
+    margin: 0 auto;
+}
+
 footer button a {
     background-color: gray;
     color: #fff;
