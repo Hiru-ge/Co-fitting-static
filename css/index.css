@@ -123,6 +123,11 @@ input[type="text"].wide-input {
     justify-content: space-around;
 }
 
+div.convert-button-parent,
+div.clear-button-parent {
+    margin-bottom: 0;   /* 外せば分かると思うが、margin-bottomがあると余白が過剰になる */
+}
+
 .convert-button,
 .clear-button {
     display: inline;
