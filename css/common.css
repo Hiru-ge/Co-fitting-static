@@ -7,7 +7,7 @@ body{
 .header-area {
     display: flex;
     justify-content: space-between;
-    height: 65px;
+    height: 2.5rem;
     align-items: center;
 }
 
@@ -42,7 +42,7 @@ body{
 .slide-menu {
     background-color: rgba(0, 0, 0, .8);
     position: fixed;
-    top: 5rem;
+    top: 3.5rem;
     width: 100%;
     left: 0;
     transform: translateX(100%);
