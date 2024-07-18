@@ -81,7 +81,13 @@
 
 [使い方ページ](https://hiruge-tools.com/how-to-use.html)にも同様の以下の説明と同様の内容が書いてあります。
 
-1. **変換前レシピ入力欄**：変換する前のレシピの情報を入力します。
+1. **プリセットレシピ呼び出しボタン**：登録されているプリセットレシピを呼び出します。
+
+   <img src="images/how-to-description/presetRecipe.png" width="40%">
+
+   プリセットレシピは、変換前レシピ入力欄に自動的に入力されます。
+
+2. **変換前レシピ入力欄**：変換する前のレシピの情報を入力します。
 
    <img src="images/how-to-description/originRecipeForm.png" width="40%">
 
@@ -91,7 +97,7 @@
 
    <img src="images/how-to-description/originRecipeForm[ice-mode].png" width="40%">
 
-2. **変換目標入力欄**：変換後のレシピの情報を入力します。
+3. **変換目標入力欄**：変換後のレシピの情報を入力します。
 
    <img src="images/how-to-description/targetParameterForm[bean,water].png" width="40%">
 
@@ -117,11 +123,11 @@
       経験則ですが、蒸らし湯量の変化が味に与える影響は大きいものと見られます。<br>
       (大幅な最終量変化がある場合は固定OFFでも良いかも知れません)
 
-3. **変換後レシピの出力**：変換されたレシピが表形式で表示されます。
+4. **変換後レシピの出力**：変換されたレシピが表形式で表示されます。
 
    <img src="images/how-to-description/convertedRecipe.png" width="40%">   
 
-4. **ストップウォッチ機能**：抽出時の経過時間を計測する機能です。
+5. **ストップウォッチ機能**：抽出時の経過時間を計測する機能です。
 
    <img src="images/how-to-description/stopWatch.png" width="40%">
 
