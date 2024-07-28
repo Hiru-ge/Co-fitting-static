@@ -171,3 +171,8 @@ header.ice-mode, footer.ice-mode {
 .selected-button {  /* 選択中のボタンは暗くして、選択中であることを示す */
     background-color: gray;
 }
+
+/* 広告部分 */
+.ads {
+    background-color: #f5eede;
+}
