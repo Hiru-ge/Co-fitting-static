@@ -1,10 +1,9 @@
 /*機能に関する部分*/
 /*Flexbox*/
 .container {
-    /* todo: .itemを常に縦並びにし、常に画面幅に収まるようにする */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 5rem;
 }
 
@@ -37,6 +36,7 @@ div.introduce {
     margin: 0.5rem 1rem;
     padding: 1rem;
     width: 28rem;
+    max-width: 95%; /* 画面幅に収まるようにする */
     border-radius: 1rem;
 }
 
