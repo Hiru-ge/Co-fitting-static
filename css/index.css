@@ -174,5 +174,6 @@ header.ice-mode, footer.ice-mode {
 
 /* 広告部分 */
 .ads {
-    background-color: #f5eede;
+    /* 背景色の設定を打ち消して透明にする */
+    background-color: transparent; 
 }
