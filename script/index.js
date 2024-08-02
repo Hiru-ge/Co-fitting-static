@@ -336,7 +336,6 @@ $(document).ready(function() {
     });
 
     // トグル機能
-    // Tips:JavaScriptで動かすと負荷がかかるので、必要に迫られればCSSでの実装も検討(滑らかに閉じるのが難しかったので現在はJSで実装)
     $('.accordion-item').hide();
     $('.accordion-head').on('click', function() {
         $(this).children('.accordion-toggle').toggleClass('rotate-90');
