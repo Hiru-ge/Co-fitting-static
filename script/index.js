@@ -243,7 +243,10 @@ $(document).ready(function() {
         // 変換前レシピの入力内容を取得
         let pourTimes = $('#pour-times-input').val();
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
-        let ice_g = $('#ice-input').val();
+        let ice_g = 0;  // ice_gの初期値は0としてNanを防ぎ、ice-modeなら正しい値で更新する
+        if($('#ice-input').val()){
+            ice_g = $('#ice-input').val();
+        }
 
         let targetBean_g, targetWaterTotal_ml, convertRate;
         if($('#magnification').val()){ // 変換率が手動入力されている場合は、それを採用して変換する
