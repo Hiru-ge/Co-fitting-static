@@ -236,11 +236,8 @@ $(document).ready(function() {
         return Output;
     }
 
-    // レシピの変換･変換後レシピの出力
-    $('.convert-button').on('click', function(){
-        event.preventDefault(); // ページ遷移を防ぐ
-
-        // 変換前レシピの入力内容を取得
+    function toConvertValuesGetter() {
+        
         let pourTimes = $('#pour-times-input').val();
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         let ice_g = 0;  // ice_gの初期値は0としてNanを防ぎ、ice-modeなら正しい値で更新する
@@ -264,6 +261,15 @@ $(document).ready(function() {
         if(inputError_Detector([pourTimes, originWaterTotal_ml, targetBean_g, targetWaterTotal_ml])=='Error'){
             return;
         }
+        return [pourTimes, originWaterTotal_ml, ice_g, targetBean_g, convertRate];
+    }
+
+    // レシピの変換･変換後レシピの出力
+    $('.convert-button').on('click', function(){
+        event.preventDefault(); // ページ遷移を防ぐ
+
+        // 変換前レシピの入力内容をモードに応じて取得
+        let [pourTimes, originWaterTotal_ml, ice_g, targetBean_g, convertRate] = toConvertValuesGetter();
 
         // 変換後の豆量と総湯量を転記(小数点第一位まで表示)
         $('.bean-output').text(Math.trunc(targetBean_g*10)/10);
