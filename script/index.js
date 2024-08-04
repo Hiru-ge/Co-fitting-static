@@ -243,6 +243,7 @@ $(document).ready(function() {
         // 変換前レシピの入力内容を取得
         let pourTimes = $('#pour-times-input').val();
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
+        let ice_g = $('#ice-input').val();
 
         let targetBean_g, targetWaterTotal_ml, convertRate;
         if($('#magnification').val()){ // 変換率が手動入力されている場合は、それを採用して変換する
@@ -252,7 +253,8 @@ $(document).ready(function() {
         }else{        
             targetBean_g = $('#bean-target').val();
             targetWaterTotal_ml = $('#water-target').val();
-            convertRate = targetWaterTotal_ml / originWaterTotal_ml;
+            // 文字列に解釈されないよう、Number()で明示的に数値に変換
+            convertRate = targetWaterTotal_ml / (Number(originWaterTotal_ml) + Number(ice_g));  
         }
 
         // 入力エラー検知関数に処理を投げて、エラーがあればアラートを出して処理を中断
@@ -262,7 +264,7 @@ $(document).ready(function() {
 
         // 変換後の豆量と総湯量を転記(小数点第一位まで表示)
         $('.bean-output').text(Math.trunc(targetBean_g*10)/10);
-        $('.water-output').text(Math.trunc(targetWaterTotal_ml*10)/10);
+        $('.water-output').text(Math.trunc((originWaterTotal_ml*convertRate)*10)/10);
 
         // 氷量が入力されている場合、変換後の氷量を算出・出力
         let convertedIce_g = Math.trunc($('#ice-input').val()*convertRate);
