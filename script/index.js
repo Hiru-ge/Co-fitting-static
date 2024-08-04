@@ -244,7 +244,7 @@ $(document).ready(function() {
         let pourTimes = $('#pour-times-input').val();
         let originWaterTotal_ml = $(`.pour-step${pourTimes}`).children('.pour-ml').val();
         let ice_g = 0;  // ice_gの初期値は0としてNanを防ぎ、ice-modeなら正しい値で更新する
-        if($('#ice-input').val()){
+        if($('#ice-check').prop('checked')){
             ice_g = $('#ice-input').val();
         }
 
