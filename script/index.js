@@ -98,7 +98,8 @@ $(document).ready(function() {
             }
 
             // プリセットレシピの比率を計算して表示
-            const OriginRatio = brewParameterCompleter([SelectedRecipe.bean_g, SelectedRecipe.water_ml, '']);
+            const SelectedRecipeSumWater = Number(SelectedRecipe.water_ml) + Number(SelectedRecipe.ice_g);
+            const OriginRatio = brewParameterCompleter([SelectedRecipe.bean_g, SelectedRecipeSumWater, '']);
             $('#origin-ratio').html(OriginRatio);
         }else{
             console.log('Error[presetActivate]: プリセットIDが不正です');
@@ -140,6 +141,10 @@ $(document).ready(function() {
     $('.origin-process').on('change', function(){
         const PourTimes = $('#pour-times-input').val();
         const OriginSumWater = $(`.pour-step${PourTimes}`).children('.pour-ml').val();
+        let isIceMode = $('#ice-check').prop('checked');
+        if(isIceMode){
+            OriginSumWater = Number(OriginSumWater) + Number($('#ice-input').val());
+        }
         const OriginBean = $('#bean-input').val();
         if (OriginBean && OriginSumWater) {
             const OriginRatio = brewParameterCompleter([/*豆量=*/OriginBean, /*総湯量=*/OriginSumWater, /*比率=*/'']);
