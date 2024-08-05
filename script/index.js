@@ -274,10 +274,10 @@ $(document).ready(function() {
         // 変換後の豆量と総湯量を転記(小数点第一位まで表示)
         $('.bean-output').text(Math.trunc(targetBean_g*10)/10);
         $('.water-output').text(Math.trunc((originWaterTotal_ml*convertRate)*10)/10);
-
-        // 氷量が入力されている場合、変換後の氷量を算出・出力
-        let convertedIce_g = Math.trunc($('#ice-input').val()*convertRate);
-        if(convertedIce_g){
+        // 氷量が入力されている(アイスモードの)場合、変換後の氷量を算出・出力
+        let isIceMode = $('#ice-check').prop('checked');
+        if(isIceMode){
+            let convertedIce_g = Math.trunc(ice_g*convertRate);
             $('.ice-output').text(convertedIce_g);
         }
 
