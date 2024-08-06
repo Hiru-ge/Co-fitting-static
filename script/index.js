@@ -154,7 +154,7 @@ $(document).ready(function() {
 
 
     // 変換目標入力欄の入力補助(豆量･総湯量･比率のどれか2つを入力すると、残り1つを計算して補完する)
-    $('.targetProcessComplete_argument').on('change', function(){
+    $('.targetBrewParameter').on('change', function(){
         let targetBean = $('#bean-target').val();
         let targetWater = $('#water-target').val();
         let targetRatio = $('#ratio-target').val();
