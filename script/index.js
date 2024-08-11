@@ -222,7 +222,7 @@ $(document).ready(function() {
             input_pour_mls.push($(`.pour-step${i}`).children('.pour-ml').val());
             totalWater_mls.push(Math.trunc(input_pour_mls[i] * convertRate));
             // 蒸らし固定ONの場合、1投目の総湯量は固定(元レシピの1投目の総湯量と同じ)
-            if (i === 1 && $('#steep-check').prop('checked')) {
+            if (i === 1 && $('#steep-keep-check').prop('checked')) {
                 totalWater_mls[1] = $(`.pour-step1`).children('.pour-ml').val();
             }
 
