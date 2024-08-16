@@ -98,8 +98,14 @@ $(document).ready(function() {
             }
 
             // プリセットレシピの比率を計算して表示
-            const SelectedRecipeSumWater = Number(SelectedRecipe.water_ml) + Number(SelectedRecipe.ice_g);
-            const OriginRatio = brewParameterCompleter([SelectedRecipe.bean_g, SelectedRecipeSumWater, '']);
+            let selectedRecipeSumWater;
+            if(SelectedRecipe.ice_g){
+                // 氷量のデフォルト値を0として計算させても良いような気はするが、とりあえずはこの形で書いておく(後でリファクタリングするかも)
+                selectedRecipeSumWater = Number(SelectedRecipe.water_ml) + Number(SelectedRecipe.ice_g);
+            }else{
+                selectedRecipeSumWater = SelectedRecipe.water_ml;
+            }
+            const OriginRatio = brewParameterCompleter([SelectedRecipe.bean_g, selectedRecipeSumWater, '']);
             $('#origin-ratio').html(OriginRatio);
         }else{
             console.log('Error[presetActivate]: プリセットIDが不正です');
