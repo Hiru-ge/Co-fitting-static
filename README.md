@@ -158,4 +158,4 @@
   
 ## 不具合等
 
-バグ修正等はGitHubの[issue](https://github.com/Hiruge-1/Coffee-fitting/issues)まで連絡ください。
+バグ修正等はGitHubの[issue](https://github.com/Hiru-ge/Co-fitting-static/issues)まで連絡ください。
